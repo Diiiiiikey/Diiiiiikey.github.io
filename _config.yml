@@ -108,7 +108,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Blog"
   location         : "South Korea"
-  email            : chest6654@gmail.
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
