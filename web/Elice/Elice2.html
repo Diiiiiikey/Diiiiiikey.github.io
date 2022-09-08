@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        // 구구단
+        function timesTable(n) {
+            for(var i = 1; i <= 9; i++) {
+                document.write(n + ' x ' + i + ' = ' + (n * i) + '<br>');   
+            }
+        }
+        timesTable(2);
+
+
+
+        function solution() {
+            return "Hi, Elice";
+        }
+        console.log(solution());
+
+
+
+        function solution() {
+            return '400 \n' + 'bus \n' + 'like';
+        }   
+        console.log(solution());
+
+        
+
+        function solution() {
+            return "\"It's all right\"" ;
+        }
+
+
+        function solution(num1, num2) {
+            let answer = [
+                Math.floor(num1 / num2), (num1 % num2)
+            ];
+
+            return answer; 
+        }
+
+        function solution(num1, num2) {
+            let answer = [];
+
+            answer.push(Math.floor(num1 / num2));
+            answer.push(num1 % num2);
+
+            return answer;
+        }
+
+
+        function solution3(x, y) {
+
+        return x + y;
+        }
+
+        console.log(solution3(3, 4));
+
+
+        function solution(str) {
+            var answer = [];
+            var srtSplit = str.split(' ')
+            answer.push(typeof(srtSplit));
+            answer.push(srtSplit[0]);
+            return answer;
+        }
+
+
+
+        function solution(input) {
+            var answer;
+            let inpSplit = input.split(' ');
+
+            let a = inpSplit[0];
+            let b = inpSplit[1];
+            let c = inpSplit[2];
+            let d = inpSplit[3];
+
+            nswer = (a <= b && a == d && b > c && c < 6) || (a == b && a == c && a == d);
+            return answer;
+        }       
+
+
+        function solution(s) {
+            var answer = ''
+            for(let i = 0; i < s.length; i++) {
+                if(s[i] === " ") {
+                    answer += '링디기디기\n';
+                }   else if(s[i] === '.') {
+                    answer += '딩딩딩\n';
+                }   else {
+                    answer += '링딩동 ';
+                }
+            }
+            return answer;
+        }
+
+        console.log(17 % 1);
+    </script>
+
+    
+</body>
+</html>

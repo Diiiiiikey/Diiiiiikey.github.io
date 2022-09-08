@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        function cal(param1, param2) {
+            console.log(param1 + param2);
+            return param1 * 10;
+        }
+
+        let result = cal(10, 20);
+        console.log(result);
+
+        const base = 3;
+        const height = 4;
+        const triangleArea = (base * height) / 2;
+        console.log(triangleArea); // 6
+
+        // 함수는 return을 만나면 반환이 되고 종료됨(출력)
+        // return이 없으면 undefined
+
+        // 함수를 선언하는 방법은 3가지
+        // 1. 함수선언식
+
+        function getTriangleArea(base, height) {
+            let triangleArea = (base * height) / 2;
+            return triangleArea
+        }
+        console.log(getTriangleArea(2, 3)); // 3
+
+        // 2. 함수표현식
+
+        const getTriangleAreaa = function(base, height) {
+            let triangleArea = (base * height) / 2;
+            return triangleArea
+        }
+
+        // 3. 화살표 함수
+
+        const getTriangleAreaaa = (base, height) => {
+            let triangleArea = (base * height) / 2;
+            return triangleArea;
+        }
+
+        // 함수의 본문에 return만 있다면 return, {} 생략 가능
+
+        const getTriangleAreaaaa = (base, height) => (base * height) / 2;
+
+        // 표현식이 2줄 이상인경우 생략 X
+        // const getTriangleAreaaaa = (base, height) => (base * height) / 2;
+        // console.log(3,5)
+        // (base, height) - parameter(매개변수)
+        // (3, 5) - arguement(전달인자)
+
+
+        function returnWordWithJoy(word) {
+            return word + '!';
+        }
+        let results = returnWordWithJoy('I love coding');
+        console.log(results);
+
+    </script>
+</body>
+</html>

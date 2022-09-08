@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        function solution(s) {
+            var answer = ''
+            for(let i = 0; i < s.length; i++) {
+                if(s[i] === " ") {
+                    answer += '링디기디기\n';
+                }   else if(s[i] === '.') {
+                        answer += '딩딩딩\n';
+                }   else {
+                    answer += '링딩동 ';
+                }
+            }
+            return answer;
+        }
+
+        function solution() {
+            var sum = 0;
+            for(let i = 1; i <= 200; i++) {
+                for(let j = 2; j <= i; j++) {
+                    if(i % j === 0) {
+                        if(i === j) {
+                            sum += i
+                        }
+                    }
+                }
+            }
+            return sum; 
+        }
+
+        function solution() {
+            var sum = 0;
+            for (var i = 1; i <= 200; i++) {
+                for (var j = 2; j <= i; j++) {
+                    if (i % j == 0) {
+                        break;
+                    }
+                }
+                if (j == i) {
+                    sum += j;
+                }
+            }
+            return sum; 
+        }
+
+        function solution(arr) {
+            var answer = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    answer.push(arr[i][j]); // 왜 그냥 [i] 는 안되는가
+                }
+            }
+            return answer;
+        }
+        console.log(solution([ [1], [2], [3], [4], [5] ]));
+
+
+        function solution(arr) {
+            var answer;
+
+            answer = arr.flat();
+
+            return answer;
+        }
+
+        let arr = [ [1], [2], [3], [4], [5] ];
+        console.log(arr);
+    </script>
+
+    
+</body>
+</html>

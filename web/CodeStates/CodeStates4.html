@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        /* 
+        반복문
+        같거나 비슷한 코드를 여러번 실행시켜야 할 때 사용하는 구문
+        
+        let sum = 1;
+
+        sum = sum + 2;
+        sum = sum + 3;
+        sum = sum + 4;
+
+        console.log(sum);
+        
+        sum과 숫자(n)의 합을 sum에 대입하자
+        조건 - 
+            숫자(n)는 2부터 시작된다 let n = 2; 초기화
+            숫자(n)가 4가 될 때 까지 반복한다 n <= 4; 조건식
+            숫자(n)는 1씩 증가한다 n = n + 1; 증감문
+        **/
+
+        let sum = 1;
+
+        for(let n = 2; n <= 4; n = n + 1) {
+            sum = sum + n;
+        }
+        console.log(sum);
+        
+        for(let n = 0; n < 5; n = n + 1) {
+            console.log('hello World');
+        }
+
+        for(let n = 0; n <= 4; n = n + 1) {
+            console.log('hello World');
+        }
+
+        for(let n = 1; n <= 5; n = n + 1) {
+            console.log('hello World');
+        }
+
+        /*
+        While
+        if 문처럼 조건문만 따로 적어주고 초기화, 증감문은
+        while 바깥에 적는다
+        초기화, 증감문이 필요없을 때 while을 사용하는 편
+        **/
+
+        let sum1 = 1 ;
+        let n = 2;
+        while(n <= 4) {
+            sum1 = sum1 + n;
+            n = n + 1;
+        }
+        console.log(sum1);
+
+
+        
+
+    </script>
+    
+</body>
+</html>

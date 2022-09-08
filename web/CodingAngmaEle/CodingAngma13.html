@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        const superman = {
+            name : 'clark',
+            age : 30,
+            fly : function(){  //여기서 fly가 method function 생략가능
+                console.log("날아갑니다.")
+            }
+        }
+        superman.fly();
+
+        const user = {
+            name : 'Mike',
+            sayHello : function(){
+                console.log(`Hello, I'm ${this.name}`); //user로 호출하면 안됨
+            }
+        }
+        user.sayHello();
+
+        let boy = {
+            name : 'DK',
+            sayHello : function(){
+            console.log(`Hello, I', ${this.name}`);
+            }
+        }
+        boy.sayHello();
+
+        let girl = {
+            name : 'SB',
+            sayHello : function(){
+            console.log(`Hello, I', ${this.name}`);
+            }
+        }
+        girl.sayHello();
+
+        //화살표 함수는 일반 함수와 달리 자신만의 this를 가지지 않음 화살표 함수 내부에서
+        //this를 사용하면, 그 this는 외부에서 값을 가져옴
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        //const superman = {
+        //    name(프로퍼티) : 'clark'(변수),
+        //    age : 33
+        //}
+
+        //alert(superman.name);
+        //alert(superman['age']);
+
+        //추가
+        //superman.gender = 'male';
+        //superman['hairColor'] = 'black';
+        
+        //삭제
+        //delete superman.hairColor;
+
+        //단축 프로퍼티
+
+        const name = 'clark';
+        const age = 33;
+        const superman = {
+            name,
+            age,
+            gender : 'male',
+        }
+
+        alert(superman.name);
+        alert(superman['age']);
+
+        //프로퍼티 존재 확인
+        //console에서
+        //'birthDay' in superman;
+
+        //for in 반복문 객체를 순회하면서 값을 얻을 수 있다
+        for(let key in superman){
+            console.log(key);
+            console.log(superman[key]);
+        }
+        console.log(superman);
+
+        function makeObject(name, age){
+            return {
+                name,
+                age,
+                hobby : "football"
+            }
+        }
+
+        const Mike = makeObject('Mike', 30);
+        console.log(Mike)
+    </script>
+</body>
+</html>

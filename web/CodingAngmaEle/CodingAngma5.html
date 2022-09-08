@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+
+</head>
+<body>
+    <script>
+        //||or 하나라도 true 면 true, 첫번째 true를 발견하면 즉시 평가를 멈춤 a || b
+        //&&And 하나라도 false 면 false, 첫번째 false를 발견하면 즉시 평가를 멈춤 a && B
+        //!Not true 와 false의 반대값을 출력 !a
+
+        //const name = "MIKE";
+        //const age = 30;
+
+        //if(name === 'TOM' || age > 19){
+        //    console.log('통과');
+        //}
+        
+        //if(name === 'TOM' && age > 19){
+        //    console.log('통과');
+        //}   else    {
+        //    console.log('꺼져');
+        //}
+        
+        //const age = prompt("나이");
+        //const isAge = age > 19;
+        
+        //if(!isAge){
+        //    console.log('꺼져');
+        //}   else    {
+        //    console.log('환영');
+        //}
+
+        //우선순위 남자이고 이름이 Mike 이거나 성인이면 통과
+
+        const gender = "F";
+        const name = "John";
+        const isAdult = true;
+
+        if(gender === "M" && name === "Mike" || isAdult){
+            console.log("통과");
+        }   else{
+            console.log("안돼");
+        }
+        if(gender === "M" && (name === "Mike" || isAdult)){
+            console.log("통과");
+        }   else{
+            console.log("안돼");
+        }
+        </script>
+    
+</body>
+</html>

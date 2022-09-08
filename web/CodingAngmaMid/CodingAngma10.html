@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        // 나머지 매개변수, 전개 구문
+        // ... 로 사용
+        function showName(name) {
+            console.log(name);
+        }
+
+        showName('Mike');
+        showName('Mike', 'Tom'); // 'Mike'
+        showName(); // undefined
+
+        // 함수의 인수를 얻는 방법 1. arguments 2. 나머지 매개변수
+        // (화살표함수에는 arguments가 없다)
+
+        // areguments
+        /* 함수로 넘어 온 모든 인수에 접근
+        함수 내에서 이용 가능한 지역변수
+        length / index
+        Array 형태의 객체(Object)
+        배열의 내장 매서드 없음(forEach, map)
+        **/
+       
+        function showNameA(name){
+            console.log(arguments.length); // 2
+            console.log(arguments[0]); // Mike
+            console.log(arguments[1]); // Tom
+        }
+        showNameA('Mike', 'Tom');
+
+        // es6 환경에서는 가급적 나머지 매개변수를 사용하는 것을 권장
+
+        function showNameB(...names) {
+            console.log(names);
+        }
+        showNameB(); // []
+        showNameB('Mike'); // ['Mike']
+        showNameB('Mike', 'Tom'); // ['Mike', 'Tom']
+
+
+        function add(...numbers) {
+            let result = 0;
+            numbers.forEach((num) => (result += num));
+            console.log(result);
+        }
+
+        /* 위와 같은 동작
+            function add(...numbers) {
+            let result = numbers.reduce((prev, cur) => prev + cur));
+            console.log(result);
+        } **/
+
+        add(1, 2, 3);
+        add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+
+        // 나머지 매개변수는 항상 마지막에
+        function user(name, age, ...skills) {
+            this.name = name;
+            this.age = age;
+            this.skills = skills;
+        }
+
+        const user1 = new user('Mike', 30, 'html','css');
+        const user2 = new user('Tom', 20, 'JS','React');
+        const user3 = new user('Jane', 40, 'Nothing');
+
+        console.log(user1);
+        console.log(user2);
+        console.log(user3);
+
+
+        // 전개 구문 :  배열
+
+        let arr1 = [1,2,3];
+        let arr2 = [4,5,6];
+        let resultt = [0, ...arr1, ...arr2, 7,8,9];
+        console.log(resultt); //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        const nums = [3, 10, 2, 40, 21]
+        const minNum = Math.min(...nums); // 그냥 nums를 넣으면 NaN값이 나온다
+        const maxNum = Math.max(...nums);
+
+        console.log(minNum);
+        console.log(maxNum);
+
+
+        // 전개 구문 : 객체
+
+        let userr = {name : 'Mike'}
+        let mike = {...userr, age : 30}
+        console.log(mike); //{name: 'Mike', age: 30}
+        
+
+
+    </script>
+    
+</body>
+</html>

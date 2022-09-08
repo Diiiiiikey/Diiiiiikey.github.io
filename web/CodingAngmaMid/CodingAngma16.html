@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+
+</head>
+<body>
+    <script>
+        // Promise
+        // 주문을 했을 때 언제 어떻게 나올지 모르는 상품을 기다릴 때 사용
+        // 완성 혹은 실패했을 때 연락이 오게 만드는 함수
+
+        /* 
+        const pr = new Promiss((resolve, reject) => {
+            code
+        }); 
+
+        resolve 는 성공한 경우
+        reject 는 실패한 경우
+        이렇게 어떤 일이 완료됐을 때 실행되는 함수를 callback 함수라고 한다
+        */
+
+        /* 
+        new Promise 생성자가 반환하는 promise 객체는 state와 result를 프로퍼티로 갖는다
+
+        state는 pending(대기) 상태에서 resolve(value)가 호출되면 fulfilled가 된다
+        이때 result는 resolve함수가 전달된 값(value)이다.
+
+        reject(error)가 호출된다면 state : rejected / result : error
+        */
+
+
+        // 판매자의 코드
+
+        const pr = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('OK')
+            }, 3000)
+        });
+
+        // 위 코드는 state : pending / result : undefined =(3초 후)> state : fulfilled / result : 'OK'
+
+        const prE = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject(new Error('error...'));
+            }, 5000)
+        });
+
+        // 위 코드는 state : pending / result : undefined =(3초 후)> state : rejected / result : 'error...'
+
+        // 구매자의 코드
+        /*
+        pr.then(
+            function(result){
+                console.log(result + ' 가지러가자');
+            }, // 이행되었을 때 OK
+            function(err){
+                console.log('다시줘');
+            }, // 거부되었을 때 
+        );
+        */
+
+        // then 이외에 사용할 수 있는 것 catch와 finally
+        // catch는 reject일 경우에만 실행된다
+
+        /* 
+        pr.then(
+            function(result){
+                console.log(result + ' 가지러가자');
+            }
+        ).catch(
+            function(err){
+                console.log('다시줘');
+            },
+        );
+
+        가독성, 첫번째 함수의 에러도 잡아주기 때문에 사용 권고
+        */
+
+        // finally 이행이든 거부든 처리가 완료되면 항상 실행
+
+        /*
+        pr.then(
+            function(result){
+                console.log(result + ' 가지러가자');
+            }
+        ).catch(
+            function(err){
+                console.log('다시줘');
+            }
+        ).finally(
+            function(){
+                console.log('---주문 끝---')
+            }
+        );
+        */
+
+        console.log("시작");
+        pr.then((result) => {
+            console.log(result);
+            }
+        ).catch((err) => {
+            console.log(err);
+            }
+        ).finally(() => {
+            console.log('끝');
+            }
+        )
+
+        console.log("시작");
+        prE.then((result) => {
+            console.log(result);
+            }
+        ).catch((err) => {
+            console.log(err);
+            }
+        ).finally(() => {
+            console.log('끝');
+            }
+        )
+
+        
+
+        // 3개의 상품을 주문했을 때 Promise를 사용하지 않고
+
+        const f1 = (callback) => {
+            setTimeout(function() {
+                console.log("1번 주문 완료");
+                callback();
+            }, 1000);
+        };
+
+        const f2 = (callback) => {
+            setTimeout(function() {
+                console.log("2번 주문 완료");
+                callback();
+            }, 3000);
+        };
+
+        const f3 = (callback) => {
+            setTimeout(function() {
+                console.log("3번 주문 완료");
+                callback();
+            }, 2000);
+        };
+
+        console.log('시작');
+        f1(function() {
+            f2(function() {
+                f3(function() {
+                    console.log('끝');
+                });
+            });
+        });
+
+
+        // 3개의 상품을 주문했을 때 Promise를 사용함
+
+        const p1 = () => {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("1번 주문 완료");
+                }, 1000);
+            });
+        }
+
+        const p2 = (message) => {
+            console.log(message)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    rej("2번 주문 실패");
+                }, 3000);
+            });
+        }
+
+        const p3 = (message) => {
+            console.log(message)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("3번 주문 완료");
+                }, 2000);
+            });
+        }
+
+        console.time("x");
+        Promise.all([p1(), p2(), p3()]).then((res) => {
+            console.log(res);
+            console.timeEnd("x");
+        });
+        
+
+        console.log('시작');
+        p1()
+            .then((res) => p2(res))
+            .then((res) => p3(res))
+            .then((res) => console.log(res))
+            .catch(console.log)
+            .finally(() => {
+                console.log('끝');
+            });
+            
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>

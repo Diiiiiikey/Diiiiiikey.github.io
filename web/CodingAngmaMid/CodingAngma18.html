@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        // generator
+        // 함수의 실행을 중간에 멈췄다가 제개할 수 있는 기능
+
+
+
+        function* fn() {
+            console.log(1);
+            yield 1; // yield에서 함수의 실행을 멈출 수 있다
+            console.log(2);
+            yield 2;
+            console.log(3);
+            console.log(4);
+            yield 3;
+            return "finish";
+        }
+
+        const a = fn();
+        a.next(); // 1 가장 가까운 yield 문이 나올 때까지 실행
+        console.log(a.next()); // 2 {value: 2, done: false}  
+        // value는 yield 오른쪽 값 ,, 생략하면 undefined
+        // done은 함수가 끝났는지 표현 끝났으면 true
+        a.next(); // 3, 4
+        console.log(a.next()); // {value: 'finish', done: true}
+        console.log(a.next()); // {value: undefined, done: true}
+
+
+        
+        // next() 외에도 return(), throw() 매서드를 가지고 있다
+
+        function* fx() {
+            console.log(1);
+            yield 1;
+            console.log(2);
+            yield 2;
+            console.log(3);
+            console.log(4);
+            yield 3;
+            return "finish";
+        }
+
+        const b = fx();
+        console.log(b.return('END')); // {value: 'END', done: true} 즉시 done이 true 값
+        
+        
+        function* fq() {
+            try {
+                console.log(1);
+                yield 1; 
+                console.log(2);
+                yield 2;
+                console.log(3);
+                console.log(4);
+                yield 3;
+                return "finish";
+            }   catch (e)   {
+                console.log(e);
+            }
+        }
+
+        const c = fq();
+        console.log(c.next());
+        console.log(c.throw(new Error('err')));
+
+
+
+
+        // iterable(반복이 가능하다)
+        // Symbol.iterator 매서드가 있다
+        // Symbol.iterator 는 iterator를 반환해야 한다.
+        // iterator
+        // next 매서드를 가진다
+        // next 매서드는 value와 done 속성을 가진 객체를 반환한다.
+        // 작업이 끝나면 done은 true가 된다.
+        // 배열 역시 iterable 하다(프로토에서 Symbol.iterator 확인 가능)
+
+        const arr = [1, 2, 3, 4, 5];
+        const it = arr[Symbol.iterator]();
+        console.log(it.next()); // {value: 1, done: false}
+        console.log(it.next()); // {value: 2, done: false}
+        console.log(it.next()); // {value: 3, done: false}
+        console.log(it.next()); // {value: 4, done: false}
+        console.log(it.next()); // {value: 5, done: false}
+        console.log(it.next()); // {value: undefined, done: true}
+
+        for(let num of arr) {
+            console.log(num);
+        }; // 순회
+
+
+
+        function* fd() {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+
+        const d = fd();
+
+        console.log(d[Symbol.iterator]() === d); // true
+        // generator에 [Symbol.iterator] 값이 자기 자신이라는 것을 의미
+        // 즉 순회 가능
+
+        for(let num of d) { // for of문은 Symbol.iterator를 호출하고 없으면 에러발생
+            console.log(num);
+        }
+
+        // 문자열도 가능
+        const str = 'hello'
+        const xx = str[Symbol.iterator]()
+
+        console.log(xx.next());
+
+
+        for(let s of xx) {
+            console.log(s);
+        }
+
+        // next 매서드에 인수 전달
+        function* ff() {
+            const num1 = yield "첫번째 숫자를 입력하세요";
+            console.log(num1);
+
+            const num2 = yield "두번째 숫자를 입력하세요";
+            console.log(num2);
+            
+            return num1 + num2;
+        }
+
+        const f = ff();
+
+        console.log(f.next()); // {value: '첫번째 숫자를 입력하세요', done: false}
+        console.log(f.next(2)); // {value: '두번째 숫자를 입력하세요', done: false}
+        console.log(f.next(6)); // {value: 8, done: true}
+        
+
+
+        // generator 는 값을 미리 만들어 놓지 않음
+        // 무한으로 반복하는 반복문을 사용해도 문제 없음 필요한 순간에 사용하기 때문에
+        function* fr() {
+            let index = 0;
+            while(true) {
+                yield index++;
+            }
+        }
+        const r = fr();
+        console.log(r.next()); // 0
+
+
+
+        // yield* 을 이용해서 다른 generator 함수 부르기
+
+        function* gen1() {
+            yield "w";
+            yield "o";
+            yield "r";
+            yield "l";
+            yield "d";
+        }
+
+        function* gen2() {
+            yield "Hello,";
+            yield* gen1();
+            yield "!";
+        }
+
+        console.log(...gen2());
+    </script>
+    
+</body>
+</html>

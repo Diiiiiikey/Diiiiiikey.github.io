@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+
+        // 구조분해할당 (Destructuring assignment)
+        // 구조분해할당 구무은 배열이나 객체의 속성을 분해해서 
+        // 그 값을 변수에 담을 수 있게 하는 표현식
+
+        let [x, y] = [1, 2];
+
+        console.log(x); // 1
+        console.log(y); // 2
+
+        let users = ["Mike", "Tom", "Jane"];
+        let [user1, user2, user3] = users;
+        console.log(user1);
+
+        let str = "Mike, Tom, Jane";
+        let [user4, user5, user6] = str.split(', ');
+        console.log(user6);
+
+        let [a, b, c] = [1, 2] // c에는 undefined
+        // 이럴 때 let [a=3, b=4, c=5] = [1, 2] 처럼 기본값을 주면 에러 방지 가능
+
+        let [user7, ,user8] = ['Mike', 'Tom', 'Jane', 'Tony'];
+        // user7 = Mike , user8 = Jane , Tom 생략, Tony 생략
+
+        // 할당된 변수를 바꾸려면
+        // let aa = 1;
+        // let bb = 2;
+
+        // let cc = a;
+        // a = b;
+        // b = c;
+        // 처럼 했어야 했는데
+        [a, b] = [b, a]; // 로 가능해짐
+        
+        // 객체구조분해
+
+        let user = {name : 'Mike', age : 30, gender : 'female'};
+        let {name, age, gender = 'male'} = user;
+        // let name = user.name;
+        // let age = user.age; 와 같은 코드임
+        // 성별 기본값 male
+        
+        // 순서를 신경쓰지 않아도 된다 let {age, name} = users;
+
+        let {name : userName, age : userAge} = user;
+        console.log(userAge); // 30
+
+        function isOldEnoughToDrink(age) {
+            if(age >= 19);
+            return;
+
+        }
+        console.log(isOldEnoughToDrink(19));
+    </script>
+</body>
+</html>

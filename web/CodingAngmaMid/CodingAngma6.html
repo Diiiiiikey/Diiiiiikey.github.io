@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    
+    <script>
+        // String 문자열 html 작은 따옴표로 감싸는 것이 좋다 내용에 큰따옴표가 있을 수 있어서
+        // 영어문장은 큰따옴표가 편해
+        // 백틱은 내용 안에 표현식이나 중괄호가 있을 때
+        // 백틱은 여러 줄을 포함할 수 있음. 따옴표로 표현하려면 중간에 \n을 포함해야됨
+        // length 문자열의 길이
+        // 특정 위치에 접근하는 방법 let desc = '안녕하세요'; desc[2] = '하' 배열과 같음
+        // 0부터 시작 하지만 배열과 다르게 한글자만 바꿀 수 없음
+        // toUpperCase() , toLowerCase() 로 대소문자를 바꿀 수 있다
+        // str.indexOf(text) 문자를 인수로 받아 몇번째에 위치하고 있는지 알려준다
+        let desc = "Hi guys. Nice to meet you.";
+
+        if(desc.indexOf('Hi') > -1) { 
+            console.log('Hi가 포함된 문장입니다.');
+        }
+        // if에서 0은 false이기 때문에 성립하지 않음
+        //그래서 -1보다 큰가로 비교해야됨
+
+        // str.slice(n, m) 특정 범위에 문자열만 추출 n부터 m까지의 문자열 추출
+        // m이 없다면 문자열, 끝까지 있다면 포함은 안시킴, 음수를 적으면 끝에서 부터 셈
+        let desca = "abcdefg";
+        let descb = desca.slice(2, 5);
+        let descc = desca.slice(5);
+        let descd = desca.slice(2, -2);
+        console.log(descb);
+        console.log(descc);
+        console.log(descd);
+
+        // str.substring(n, m) n과 m을 바꿔도 동작함, 음수는 0으로 인식
+        // str.substr(n, m) n부터 시작 m 개를 가져옴
+        // str.trim() 앞 뒤 공백 제거
+        // str.repeat(n) n번 반복
+        // 문자열 비교 "a" < "c" = true
+        // 아스키코드표 "a".codePointAt(0); 97 반대로 String.fromCodePoint(9) "a"
+        
+        let list = [
+            "01. 들어가며",
+            "02. JS의 역사",
+            "03. 쟈료형",
+            "04. 함수",
+            "05. 배열",
+    ];
+
+        let newList = [];
+        
+        for(let i = 0; i < list.length; i++){
+            newList.push(
+                list[i].slice(4)
+            );
+        }
+        
+        console.log(newList);
+
+        // 금칙어 : 시팔
+
+        function hasSipal(str) {
+            if(str.indexOf('시팔') > -1) {
+                console.log('금칙어가 있습니다.');
+            }   else   {
+                console.log('통과');
+            }
+        }
+
+        hasSipal('뭐'); // -1 if에서 -1은 true
+        hasSipal('얌마');
+        hasSipal('시팔'); // 0 if에서 0은 false
+
+        // includes 문자가 있으면 true 없으면 false. 있나 없나만 판단할 때 좋다
+
+        function hasSipal(str) {
+            if(str.includes('시팔')) {
+                console.log('금칙어가 있습니다.');
+            }   else   {
+                console.log('통과');
+            }
+        }
+
+        hasSipal('뭐');
+        hasSipal('얌마');
+        hasSipal('시팔');
+        
+    </script>
+    
+</body>
+</html>

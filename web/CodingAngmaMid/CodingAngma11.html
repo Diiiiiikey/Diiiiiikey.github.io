@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+<body>
+    <script>
+        // 클로저
+
+        // 어휘적(Lexical) 환경
+        
+        // addOne(7); let 사용불가 function 사용가능
+
+        let one;
+        one = 1;
+
+        addOne(9); // let 사용가능 function 사용가능
+
+        function addOne(num) {
+            console.log(one + num);
+        }
+
+        addOne(5); /* let 사용가능 function 사용가능 ,, 
+        전역 Lexical 환경 one : 1 ,, addOne : function
+        내부 Lexical 환경 num : 5 **/
+
+        function makeAdder(x) {  // 전역 Lexical 환경 makeAdder : function ,, add3 : 초기화x
+            return function(y) { 
+                return x + y;
+            }
+        }
+        
+        const add3 = makeAdder(3); // makeAdder Lexical 환경 x : 3
+        console.log(add3(2)); // 익명함수 Lexical 환경 y : 2 
+
+        /* 1. function y = y를 가지고 있고 상위함수의 x에 접근할 수 있음
+           2.  ,, add3 함수가 생성된 이후에도 상위함수의 x에 접근할 수 있음
+           3. 이러한 것을 Closere 이라고 한다
+            함수와 렉스컬 환경의 조합, 함수가 생성될 당시의 외부 변수를 기억
+            생선 이후에도 계속 접근 가능
+        **/
+
+        const add10 = makeAdder(10);
+        console.log(add10(5)); // 15
+        console.log(add3(1)); // 4
+
+        
+        function makeCounter() {
+            let num = 0;
+
+            return function () {
+                return num++
+            };
+        }
+
+        let counter = makeCounter()
+
+        console.log(counter()); 0
+        console.log(counter()); 1 
+        console.log(counter()); 2 
+        console.log(counter()); 3
+
+    </script>
+
+    
+</body>
+</html>

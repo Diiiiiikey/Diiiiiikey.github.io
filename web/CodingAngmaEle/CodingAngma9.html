@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        //function sayHello(name){
+        //    let newName = name || 'frienad';
+        //    let msg = `Hello, ${newName}`
+        //    console.log(msg)
+        //}
+
+        function sayHello(name = 'friend'){
+            let msg = `Hello, ${name}`
+            console.log(msg)
+        }
+
+        sayHello();
+        sayHello('ho');
+        function add(num1, num2){
+            return num1 + num2;
+        }
+
+        const result = add(2,3);
+        alert(result);
+
+        //함수 한번에 한작업, 읽기 쉽고 어떤 동작인지 알 수 있게 네이밍
+    </script>
+</body>
+</html>

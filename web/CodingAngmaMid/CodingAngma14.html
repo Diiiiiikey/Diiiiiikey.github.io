@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <script>
+
+        // 상속, prototype
+
+        const user = {
+            name : 'Mike',
+        }
+        console.log(user.name); // Mike
+        // 객체가 프로퍼티를 가지고 있는지 확인하는 매서드
+        console.log(user.hasOwnProperty('name')); // true
+        console.log(user.hasOwnProperty('age')); // false
+
+        console.log(user); /* hasOwnProperty는 만든적이 없지만 console.log(user);
+        에 프로토타입으로 만들어짐 */
+
+        const user2 = {
+            name : 'Tom',
+            hasOwnProperty : function() {
+                console.log('ha');
+            }
+        }
+        user2.hasOwnProperty() // ha
+        // 위 경우에는 객체 안에 hasOwnProperty 프로퍼티가 있기 때문에 탐색을 멈춤
+        // 없을 경우에만 프로토타입에서 프로퍼티를 탐색한다
+
+
+        // 공통된 부분을 어떻게 처리할 수 있을까
+        // __proto__ 로 해결할 수 있다
+
+        const car = {
+            wheels : 4,
+            drive() {
+                console.log("drive..");
+            },
+        };
+
+        const bmw = {
+            color : "red",
+            navigation : 1,
+        };
+
+        const benz = {
+            color : "black",
+        };
+
+        const audi = {
+            color : "blue",
+        };
+
+        bmw.__proto__ = car; // bmw는 car의 상속을 받는다
+        benz.__proto__ = car;
+        audi.__proto__ = car;
+
+        console.log(bmw); // 이 객체 안에는 휠이 없지만
+        console.log(bmw.wheels); // 프로토타입으로 상속을 했기 때문에 찾을 수 있다
+        
+        // 상속은 계속될 수 있다.
+
+        const x5 = {
+            color : "white",
+            name : "x5",
+        }
+
+        x5.__proto__ = bmw;
+
+        console.log(x5);
+        console.log(x5.navigation); // 1 ,, x5에서 탐색. 없으니 bmw 탐색
+        console.log(x5.wheels); // 4,, x5에서 탐색. 없으니 bmw 탐색. 없으니 car 탐색
+
+        for(p in x5) {
+            console.log(p);
+        } // for in 을 이용해서 객체를 순회하면 프로토타입까지 포함되어 출력된다
+        console.log(Object.keys(x5)); // 상속된 프로퍼티는 나오지 않음
+        console.log(Object.values(x5)); // 상속된 프로퍼티는 나오지 않음
+
+        for(p in x5) {
+            if(x5.hasOwnProperty(p)) { // hasOwnProperty는 객체가 직접 가지고 있는 프로퍼티만 반환
+                console.log('o' ,p);
+            }   else    {
+                console.log('x' ,p);
+            }
+        }
+
+        // 생성자함수를 이용
+
+        const Bmw = function(color) {
+            this.color = color;
+        }
+        const z4 = new Bmw("purple");
+        z4.__proto__ = car;
+
+        // 생성자함수를 이용하여 더욱 간단하게
+
+        const BMW = function(color) {
+            this.color = color;
+        };
+
+        BMW.prototype.wheels = 4;
+        BMW.prototype.drive = function() {
+            console.log("drive..");
+        } // BMW에 대한 생성자함수를 들어가는 prototype
+        // 생성자 객체에 z4.__proto__ = car; 처럼 일일히 중복되는 코드를 넣지 않아도 된다
+        // prototype 프로퍼티를 객체로 한번에 추가하는 것보다 하나씩 추가해야하는 이유는
+        // constructor 가 사라지기 때문 혹은 constructor : BMW 를 이용해 추가할 수 있다
+        const y6 = new BMW("green");
+
+        console.log(y6.wheels); // 4
+        console.log(y6.drive()); // drive..
+
+
+        // 생성자함수가 새로운 객체를 만들어 낼 때 그 객체는 생성자의 instance라고 불려짐
+        // instanceof 를 통해서 객체와 생성자를 비교할 수 있다
+
+        console.log(y6 instanceof BMW); // true
+        console.log(z4.constructor === Bmw);
+
+        console.log(z4);
+
+        const Audi = function(color) {
+            const c = color;
+            this.getColor = function() {
+                console.log(c);
+            };
+        }
+
+        const a8 = new Audi('red');
+        a8.getColor(); // red ,, 위 처럼 함수를 작성하면 얻을 수만 있고 바꿀 수는 없다
+    </script>
+    
+</body>
+</html>

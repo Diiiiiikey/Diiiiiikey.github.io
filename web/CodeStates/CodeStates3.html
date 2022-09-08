@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        // 문자열
+        let str = 'CodeStates';
+        console.log(str[0]); // 'C'
+        console.log(str[4]); // 'S'
+        console.log(str[10]); // undefined
+
+        str[0] = 'G';
+        console.log(str); // CodeStates - 새로 할당하지 않는 한 바뀌지 않음
+
+        let str1 = 'Good'
+        console.log(str + str1);
+
+        let str2 = '2'
+        console.log(str2 + 3); // 23 , 다른 타입과 + 연산자하면 다 str 타입이 됨
+        console.log(str2 + false); // 2false
+
+        let str3 = str.concat(str1,str2); // str에 ()을 더해줌
+        console.log(str3);
+        
+        // length PROPERTY
+        console.log(str.length); // 10
+
+        // str.indexOf()
+        // arguments: 찾고자 하는 문자열
+        // return value: 처음으로 일치하는 index , 없으면 -1
+        // lastIndexOf() 는 뒤에서 부터 찾는다
+        // includes 포함되어 있는지
+
+        const strr = str.indexOf('e'); // 3
+        console.log(strr);
+
+        const strrr = str.lastIndexOf('e'); // 8
+        console.log(strrr);
+
+        const strrrr = str3.includes('Code'); // true
+        console.log(strrrr);
+
+        // str.split()
+        // argument: 분리 기중이 될 문자열
+        // return value: 분리된 문자열이 포함된 배열
+        // csv 형식을 처리할 때 유용
+
+        let ststr = 'Hello World Wow';
+        console.log(ststr.split(' ')); // ['Hello'. 'World'. 'Wow']
+
+        let csv = `1997,Ford,E350,"ac, abs, moon",3000.00
+        1999,Chevy,"Venture ""Extended Edition""","",4900.00
+        1999,Chevy,"Venture ""Extended Edition, Very Large""",,5000.00
+        1996,Jeep,Grand Cherokee,"MUST SELL!air, moon roof, loaded",4799.00`;
+
+        let lines = csv.split('\n')
+        console.log(lines);
+            // "1997,Ford,E350,\"ac, abs, moon\",3000.00"
+            // 1999,Chevy,\"Venture \"\"Extended Edition\"\"\",\"\",4900.00"
+            // 1999,Chevy,\"Venture \"\"Extended Edition, Very Large\"\"\",,5000.00"
+            // 1996,Jeep,Grand Cherokee,\"MUST SELL!air, moon roof, loaded\",4799.00"
+        console.log(lines[0]);
+            // 1997,Ford,E350,"ac, abs, moon",3000.00
+
+        // str.substring(start, end); 순서 바뀌어도 상관 x
+        // arguments: 시작 index, 끝 index
+        // return value: 시작과 끝 index 사이의 문자열
+        // 음수는 0 취급, 초과하면 끝 문자 취급
+
+        let alpha = 'abcdefg';
+        console.log(alpha.substring(0, 4)); // abcd
+
+
+        // str.toLowerCase() 소문자로
+        // str.toUpperCase() 대문자로 둘 다 immutable - 원본이 변하지 않는다
+
+        // string method 는 immutable
+        // array method 는 immutable, mutable 구분을 잘해야함
+
+        // trim , 공백 문자: 탭문자(\t), Carrige return(\r\m) 및 return 문자0(\n)
+        // match replace 등
+
+    </script>
+</body>
+</html>

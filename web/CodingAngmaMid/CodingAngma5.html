@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <script>
+        // Number, Math
+        // toString 10진수 -> 2진수/16진수
+
+        let num10 = 10;
+        num10.toString();
+        num2 = num10.toString(2); // 2진수
+        console.log(num2);
+
+        let num255  = 255;
+        num255.toString(16);
+        num16 = num255.toString(16); // 16진수
+        console.log(num16);
+
+        // 수학과 관련된 프로퍼티와 Mathod들을 가지고 있는 Math라는 내장객체가 있다
+
+        console.log(Math.PI);
+
+        // Math.ceil() 올림
+        let num3 = 5.1;
+        let num4 = 5.7;
+        Math.ceil(num3); //6
+        Math.ceil(num4); //6
+
+        // Math.floor() 내림
+        // Math.round() 반올림
+
+        // 소수점 자릿수
+        let userRate = 30.1234; //요구사항 : 소수점 둘째자리 까지 표현
+        const userRateResult = Math.round(userRate * 100)/100;
+        console.log(userRateResult); // 30.12
+
+        // 소수점 자릿수 다른 방법 toFixed()
+        const userRateResult2 = userRate.toFixed(2);
+        console.log(userRateResult2); // 30.12
+
+        const userRateResult3 = userRate.toFixed(0); // 30
+        const userRateResult4 = userRate.toFixed(6); // 30.123400
+        // toFixed()는 문자형으로 반환되기 때문에 유의
+
+        const sum = Number(userRateResult3) + Number(userRateResult4);
+        console.log(sum); // 그냥 더하면 3030.123400. Number 사용하면 60.123400
+
+        // isNaN() 은 NaN인지 아닌지 판단해줌
+        let x = Number('x'); // NaN
+        x == NaN; // false
+        x === NaN; // false
+        NaN == NaN; // false
+        
+        const xn = isNaN(x);
+        console.log(xn); // true
+
+        const threen = isNaN(3); 
+        console.log(threen); // false
+
+        // parseInt() 문자열을 숫자로 바꿔줌, 문자가 혼용되어 있어도 동작가능
+
+        let margin = '10px';
+
+        const p = parseInt(margin);
+        const n = Number(margin);
+        console.log(p); // 10
+        console.log(n); // NaN
+
+        let redColor = 'f3'
+        parseInt(redColor); // NaN, 첫번째 인수가 문자이기 때문
+        // 두번째 인수를 받아 숫자형으로 변경하는 방법
+
+        const redColor16 = parseInt(redColor, 16); // 243
+        parseInt('11', 2); // 3
+
+        // parseFloat() parseInt() 와 동일하지만 부동소수점을 반환한다
+
+        let padding  = '18.5%';
+        parseInt(padding); // 18
+        parseFloat(padding); // 18.5        
+
+        // Math.random() 0~1 사이 무작위 숫자 생성
+        // 1~100 사이 임의의 숫자 생성
+        const RD = Math.floor(Math.random()*100)+1;
+        console.log(RD);
+
+        // Math.max(), Math.min() 괄호 안의 인수들 중 최대값, 최소값 도출
+        // Math.abs() 절대값 도출
+        // Math.pow(n, m) n의 m제곱
+        // Math.sqrt() 괄호의 제곱근
+         
+
+    </script>    
+</body>
+</html>

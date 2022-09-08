@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <script>
+        //swithch if문과 동일 케이스가 다양할 경우 간결하게 사용가능
+
+        let fruit = prompt('과일');
+        switch(fruit){
+            case '사과' :
+                alert('100원');
+                break;
+            case '바나나' :
+                alert('200원');
+                break;
+            case '자두' :
+                alert('300원');
+                break;
+            case '수박' :
+            case '복숭아' :
+                alert('400원');
+                break;        
+        default :
+            alert('그딴건 없어');
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        let a = 'age'
+
+        const user = {
+            name : 'Mike',
+            [a] : 30, //= age : 30 computed property(계산된 프로퍼티)
+            [1 + 3] : 4,
+        }   
+        
+        function makeObj(key, val){
+            return {
+                [key] : val, // key에 무엇이 들어갈지 모를 때 유용
+            }
+        }
+        const obj = makeObj("나이" , 33);
+        console.log(obj);
+        
+        //Object.assign() : 객체 복제
+        //const cloneUser ; user; - 성립하지 않는 이유 - 
+        //user 변수에는 객체 자체가 들어가 있는 것이 아닌 객체가 저장되어 있는 메모리 주소인 객체에 대한 참조값이 저장되어 있기 때문
+        
+        const newUser = Object.assign({}, user);
+        
+        newUser.name = 'Tom';
+        console.log(newUser); // 이름 Tom
+        console.log(user); // 이름 Mike
+
+        const newUser2 = Object.assign({ name : 'DK' }, user);
+        console.log(newUser2); // 이름 Mike
+
+        newUser3 = Object.assign({ gender : 'male' }, user);
+        console.log(newUser3); // 성별 추가
+
+        const newUser4 = {
+            name : 'SB',
+        }
+
+        const info1 = {
+            [a] : 20,
+        }
+
+        const info2 = {
+            gender : 'male',
+        }
+
+        Object.assign(newUser4, info1, info2); // newUser4에 info들을 추가하는 방법
+        console.log(newUser4)
+
+        //Object.keys() 키 배열 반환
+        const result = Object.keys(user)
+        console.log(result);
+
+        //Object.values() 값 배열 반환
+        const result2 = Object.values(user)
+        console.log(result2);
+
+        //Object.entries() 키/값 배열 반환
+        const result3 = Object.entries(user)
+        console.log(result3);
+
+        //Objet.fromEntries() 키/값 배열을 객체로
+        const arr = 
+            [
+                ["name", "MIke"],
+                ["age", 30]
+            ];
+
+        const resultarr = Object.fromEntries(arr);
+        console.log(resultarr);
+
+
+
+
+    </script>
+</body>
+</html>

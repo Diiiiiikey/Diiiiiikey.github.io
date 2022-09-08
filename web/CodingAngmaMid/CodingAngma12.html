@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        // setTimeout 일정시간이 지난 후 함수를 실행
+        // setInterval 일정시간 동안 함수를 반복
+
+        // 3초 후에 로그를 찍어주는 함수
+
+        function fn() {
+            console.log(3);
+        }
+
+        setTimeout(fn, 3000); // 3000은 3초
+
+        /* 위와 똑같은 함수
+        function (fn() {
+            console.log(3);
+        }, 3000) **/
+
+        // 인수가 필요하다면 시간 뒤에 적어준다
+        // 초에 0이라고 적어도 바로 실행되지는 않음
+
+        function showName(name) {
+            console.log(name);
+        }
+        const tId = setTimeout(showName, 5000, 'Mike');
+        const iii = setInterval(showName, 2000, 'Jonh');
+
+        clearTimeout(tId); // 아무일도 일어나지 않는다
+        clearInterval(iii); // 아무일도 일어나지 않는다
+
+        let num = 0;
+        function showTime() {
+            console.log(`안녕하세요. 접속한지 ${num++}초가 지났습니다.`)
+            if (num > 5) {
+                clearInterval(sIt);
+            }
+        }
+
+        const sIt = setInterval(showTime, 1000);
+
+    </script>    
+</body>
+</html>

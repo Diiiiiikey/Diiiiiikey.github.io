@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    </head>
+
+<body>
+    <script>
+        /* call, apply, bind 매서드
+        함수 호출 방식과 관계없이 this를 지정할 수 있음
+        **/
+        // call 매서드는 모든 함수에서 사용할 수 있으며, this를 특정값으로 지정할 수 있다.
+
+        const mike = {
+            name : "Mike",
+        };
+
+        const tom = {
+            name : "Tom",
+        };
+
+        function showThisName() {
+            console.log(this.name);
+        }
+
+        showThisName.call(mike);
+
+        function update(birthYear, occupation) {
+            this.birthYear = birthYear;
+            this.occupation = occupation;
+        }
+
+        update.call(tom, 2000, '학생');
+        console.log(tom);
+
+        // apply 함수 매개변수를 처리하는 방법을 제외하면 call과 완전히 같다
+        // call은 일반적인 함수와 마찬가지로 매개변수를 직접 받지만 apply는 매개변수를 배열로 받는다
+
+        update.apply(mike, [1992, "선생"]);
+        console.log(mike);
+
+        const nums = [3, 10, 2, 40, 21]
+        const minNum = Math.min.apply(null, nums); // null 말고 this, 0, NaN 등 사용가능
+        const maxNum = Math.max.apply(null, nums);
+
+        /* 
+        const minNum = Math.min.call(null, ...nums); call은 차례대로 들어와야하니까 ... 사용
+        const maxNum = Math.max.call(null, ...nums);
+        */
+
+        console.log(minNum);
+        console.log(maxNum);
+
+        // 함수의 this 값을 영구히 바꾼다
+
+        const John = {
+            name : "John",
+        };
+
+        function updatee(birthYear, occupation) {
+            this.birthYear = birthYear;
+            this.occupation = occupation;
+        }
+
+        const updateMike = updatee.bind(mike);
+        updateMike(1959, "백수");
+        console.log(mike);
+
+        const user = {
+            name : "Mike",
+            showName : function () {
+                console.log(`Hello, ${this.name}`);
+            }
+        };
+
+        user.showName(); // Hello, Mike
+
+        let fn = user.showName;
+        fn(); // Hello, 이름은 뜨지 않는다 this를 잃어버림
+
+        fn.call(user);
+        fn.apply(user);
+
+        let boundFn = fn.bind(user);
+        boundFn();
+
+
+
+    </script>
+</body>
+</html>

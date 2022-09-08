@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        // 조건문, Boolean 타입에 대한 이해가 필요
+        // 조건문은 어떠한 조건을 판별하는 기준을 만드는 것
+
+        1 == true // true
+        1 === true // false
+        null == undefined // true
+        null === undefined // false
+        // == 이나 != 는 엄격하지 비교하지 못하니 사용x
+
+        // if(조건 1) { 조건1이 통과할 경우 } 
+        // else if(조건2) { 조건1이 통과하지 않고 조건 2가 통과할 경우 }
+        // else { 모든 조건이 통과하지 못하는 경우 }
+        // 조건에는 Boolean 으로 결과가 나오는 비교구문
+
+        // 두가지 조건이 한번에 적용되는 경우 논리연산자 사용
+        // 학생이면서, 여성일 때 isStudent && isFemale; And 연산자
+        // 학생이거나, 여성일 때 isStudent || isFemale; OR 연산자
+        // 학생이 아니면서, 여성일 때 !isStudent && isFemale; NOT, And 연산자
+
+        // !undefined - 본래 falsy 한 값
+        // !'Hello' - 본래 truthy 한 값
+
+        console.log(!undefined); // true
+        console.log(!'Hello'); // false
+
+        // 기억해야할 6가지 falsy 값
+        // if(false) if(null) if(undefined) if(0) if(NaN) if('')
+
+        // 나누기에서 나머지를 구할 때 %
+        // 나누기에서 몫을 구할 때 / 
+
+function plusOrMinus(score) {
+  let abc = score % 10
+  if ( abc <= 2 ) {
+    return '-';
+  } else if ( abc >= 8 ) {
+    return '+';
+  } else  {
+    return '';
+  }
+}
+function convertScoreToGradeWithPlusAndMinus(score) {
+  if ( score <= 100 && score >= 90 ) {
+    return 'A' + plusOrMinus(score);
+  } else if ( score <= 89 && score >= 80 ) {
+    return 'B' + plusOrMinus(score);
+  } else if ( score <= 79 && score >= 70 ) {
+    return 'C' + plusOrMinus(score);
+  } else if ( score <= 69 && score >= 60 ) {
+    return 'D' + plusOrMinus(score);
+  } else if ( score <= 59 && score >= 0 ) {
+    return 'F';
+  } else  {
+    return 'INVALID SCORE';
+  }
+  
+  // TODO: 여기에 코드를 작성합니다.
+}
+
+
+let extra = score % 10;
+  if (extra <= 2) {
+    return '-';
+  } else if (extra >= 8) {
+    return '+';
+  } else {
+    return '';
+  }
+
+function convertScoreToGradeWithPlusAndMinus(score) {
+  let grade;
+  if (score > 100 || score < 0) {
+    return 'INVALID SCORE';
+  }
+  if (score == 100) {
+    return 'A+';
+  }
+  if (score >= 90) {
+    grade = 'A';
+  } else if (score >= 80) {
+    grade = 'B';
+  } else if (score >= 70) {
+    grade = 'C';
+  } else if (score >= 60) {
+    grade = 'D';
+  } else if (score < 60) {
+    grade = 'F';
+  }
+
+  if (grade != 'F') {
+    grade = grade + plusOrMinus(score);
+  }
+  return grade;
+}
+
+    </script>
+    
+</body>
+</html>

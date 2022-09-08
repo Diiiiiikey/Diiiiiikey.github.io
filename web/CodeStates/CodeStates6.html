@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+
+</head>
+<body>
+    <script>
+        function replaceAll(str, from, to) {
+            let result = '';
+            for(let i = 0; i < str.length; i++){
+                if (str[i] === from) {
+                    result = result + to;
+                }   else    {
+                    result = result + str[i];
+                }
+  // TODO: 여기에 코드를 작성합니다.
+            }
+            return result;
+        }
+
+
+        let output = replaceAll('loop', 'o', 'e');
+        console.log(output); // --> 'leep'
+
+
+
+
+        function characterAndNumber(word) {
+            let result = '';
+            for(let i = 0; i < word.length; i++) {
+                result = result + word[i] + i;
+            }
+            return result;
+  // TODO: 여기에 코드를 작성합니다.
+        }
+
+
+        let output2 = characterAndNumber('hello');
+        console.log(output2); // --> 'h0e1l2l3o4'
+
+
+
+
+        function getSumOfFactors(num) {
+            let result = 0;
+            for(let i = 1; i <= num; i++)
+                if(num % i === 0){
+                    result = result + i
+                }   
+            return result;
+
+  // TODO: 여기에 코드를 작성합니다.
+        }
+
+
+        let output3 = getSumOfFactors(8);
+        console.log(output3); // --> 15 (1 + 2 + 4 + 8)
+
+
+
+        function isPrime(num) {
+            let count = 0
+            if(num === 1) {
+                return false;
+            }   else    {
+                    for(let i = 2; i <= num; i++) {
+                        if(num % i === 0) {
+                        count = count + 1;
+                        }                    
+                    }
+                if(count < 2) {
+                    return true;
+                }   else    {
+                    return false;
+                }
+            }
+        }
+        let output4 = isPrime(4);
+        console.log(output4); // --> true
+        // 디버거 사용방법 console 에서 debugger isPrime(4)
+        // 왜 제곱근으로 계산하는 건지 이해가 안감
+    </script>
+</body>
+</html>

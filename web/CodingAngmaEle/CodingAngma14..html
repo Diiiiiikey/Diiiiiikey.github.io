@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        //Array
+        //배열을 탐색할 때는 고유번호를 사용하고 Index라고 부름  
+        //length 배열의 길이 student.length
+        //push 배열 let days = ['금', '토'] days.push('일') console.log(days) // ['금', '토' ,'일']
+        //pop push의 반대(삭제)
+        //shift, unshift 배열 앞에 추가제거
+        //배열을 쓰는 가장 큰 이유는 반목을 위해서
+
+        let days = ['월', '화', '수'];
+
+        for(let index = 0; index < days.length; index++){
+            console.log(days[index]);
+        }
+        //index는 0부터 시작 - index가 배열의 length보다 작으면 실행- index를 1증가시킴
+
+        for(let d of days){
+            days[1] = 'tue'; //이렇게 수정도 가능함
+            console.log(d);
+        }
+        //index를 못 얻는다는 단점이 있음
+    </script>
+</body>
+</html>

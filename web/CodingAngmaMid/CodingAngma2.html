@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        //생성자 함수(붕어빵 팬), 첫 글자 대문자
+        //객체 리터럴을 여러번 해야할 때
+        //생성자 함수는 new를 붙여야한다
+
+        function User(name, age){
+            this.name = name;
+            this.age = age;
+            this.sayName = function(){
+                console.log(this.name);
+            }
+        }
+
+        let user1 = new User('Mike', 30);
+        let user2 = new User('Jane', 22);
+        let user3 = new User('Tom', 17);
+        let user5 = new User('Han', 40);
+
+        user5.sayName();
+
+        function Item(title, price){
+            this.title = title;
+            this.price = price;
+            this.showPrice = function(){
+                console.log(`가격은 ${price}원 입니다.`);
+            }
+        }
+        const Item1 = new Item('apple', 300);
+        const Item2 = new Item('banana', 500);
+        const Item3 = new Item('peach', 1000);
+        Item1.showPrice();
+        Item2.showPrice();
+        Item3.showPrice();
+    </script>
+
+</body>
+</html>

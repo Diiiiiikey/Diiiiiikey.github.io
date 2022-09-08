@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        //객체 in
+        // true로 나오는 이유 - 나이가 없어서 undefind - function이 false가 되어 항상 true로 반환
+        /*function isAdult(user){
+            if(user.age < 20){
+                return false;
+            }
+            return true;
+        }
+
+        const Mike = {
+            name : "Mike",
+            age : 30
+        };
+
+        const Jane = {
+            name : "Jane"
+        };
+
+        console.log(isAdult(Jane))*/
+
+        function isAdult(user){
+            if(user.age < 20){
+                return false;
+            }
+            return true;
+        }
+
+        const Mike = {
+            name : "Mike",
+            age : 30
+        };
+
+        const Jane = {
+            name : "Jane"
+        };
+
+        console.log(isAdult(Jane))
+
+        function isAdult2(user){
+            if(!('age' in user) || // user에 age가 없거나
+                    user.age < 20){ // 20살 미만이거나
+                return false;
+            }
+            return true;
+        };
+
+        const Nike = {
+            name : "Nike",
+            age : 30
+        };
+
+        const John = {
+            name : "John"
+        };
+
+        console.log(isAdult2(John));
+
+        for(x in Mike){
+            console.log(x)
+            console.log(Mike[x])
+        }
+    </script>
+    
+</body>
+</html>

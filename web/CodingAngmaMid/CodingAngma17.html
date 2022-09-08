@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    
+</head>
+<body>
+    <script>
+
+
+        // 한번에 실행하는 방법 Promise.all
+        // reject 일시 어떠한 데이터도 얻지 못함,, 하나의 정보라도 누락되면 보여주지 않는 방법
+
+        const p1 = () => {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("1번 주문 완료");
+                }, 5000);
+            });
+        }
+
+        const p2 = (message) => {
+            console.log(message)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("2번 주문 완료");
+                }, 3000);
+            });
+        }
+
+        const p3 = (message) => {
+            console.log(message)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("3번 주문 완료");
+                }, 2000);
+            });
+        }
+
+        console.time("x");
+        Promise.all([p1(), p2(), p3()]).then((res) => {
+            console.log(res);
+            console.timeEnd("x");
+        });
+
+        // Promise.race 빠르게 완료되는 작업을 처리하는 방법
+        // 용량이 큰 이미지들을 로딩할 때 하나라도 완료되면 이미지를 보여 줄 때
+        Promise.race([p1(), p2(), p3()]).then((res) => {
+            console.log(res);
+        });
+
+
+
+        // async, await
+        // then 매서드를 체인형식으로 호출하는 것보다 가독성이 높아짐
+        /*
+        async function getName() {
+            console.log('MIke');
+        }
+        console.log(getName()); // Promise가 호출된다 */
+
+        async function getName() {
+            //return Promise.resolve('Tom');
+            throw new Error("error..");
+        }
+        
+        getName().then((name) => {
+            console.log(name);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+
+        // await는 async 함수 안에서만 사용 가능
+        function getname(name) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(name);
+                }, 1000);
+            });
+        }
+
+        async function showName() {
+            const result = await getname('Mike');
+            console.log(result);
+        }
+
+        console.log("시작");
+        showName();
+
+
+
+        // aysnc await를 이용해서
+
+        const f1 = () => {
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("1번 주문 완료");
+                }, 5000);
+            });
+        }
+
+        const f2 = (message) => {
+            console.log(message)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    rej(new Error('error..'));
+                }, 3000);
+            });
+        }
+
+        const f3 = (message) => {
+            console.log(message)
+            return new Promise((res, rej) => {
+                setTimeout(() => {
+                    res("3번 주문 완료");
+                }, 2000);
+            });
+        }
+
+        console.log("시작");
+        async function order() {
+            try {
+                const result1 = await f1();
+                const result2 = await f2(result1);
+                const result3 = await f3(result2);
+                console.log(result3);
+                // const result = await Promise all([f1(), f2(), f3()])
+                // console.log(result);
+            }    catch (e) {
+                console.log(e);
+            }
+                console.log("끝");
+        }
+        order();
+    </script>
+    
+</body>
+</html>
