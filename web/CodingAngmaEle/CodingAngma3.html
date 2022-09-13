@@ -34,6 +34,18 @@
             Boolean(NaN)
 
         )
+        
+        // 주의사항
+
+        console.log(
+            Number(null), // 0
+            Number(undefined), // NaN
+            Number(0), // false
+            Number('0'), // true
+            Number(''), // false
+            Number(' '), // true
+
+        )
 
     </script>
     
