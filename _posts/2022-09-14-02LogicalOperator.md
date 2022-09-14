@@ -14,7 +14,7 @@ sidebar:
 || <br/>
 or: 하나라도 true 면 true, 첫번째 true를 발견하면 즉시 평가를 멈춤 <br/>
 
-                a || b 
+a || b 
 
 <br/>
 <br/>
@@ -22,14 +22,13 @@ or: 하나라도 true 면 true, 첫번째 true를 발견하면 즉시 평가를 
 && <br/>
 And: 하나라도 false 면 false, 첫번째 false를 발견하면 즉시 평가를 멈춤 <br/>
 
-                a && B 
+a && B 
 
 <br/>
 
 ! <br/>
 Not: true 와 false의 반대값을 출력 <br/>
-
-                !a 
+!a 
 
 <br/>
 </html>
