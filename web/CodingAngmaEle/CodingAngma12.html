@@ -26,24 +26,6 @@
 
         console.log(isAdult(Jane))*/
 
-        function isAdult(user){
-            if(user.age < 20){
-                return false;
-            }
-            return true;
-        }
-
-        const Mike = {
-            name : "Mike",
-            age : 30
-        };
-
-        const Jane = {
-            name : "Jane"
-        };
-
-        console.log(isAdult(Jane))
-
         function isAdult2(user){
             if(!('age' in user) || // user에 age가 없거나
                     user.age < 20){ // 20살 미만이거나
@@ -63,9 +45,9 @@
 
         console.log(isAdult2(John));
 
-        for(x in Mike){
+        for(x in Nike){
             console.log(x)
-            console.log(Mike[x])
+            console.log(Nike[x])
         }
     </script>
     
