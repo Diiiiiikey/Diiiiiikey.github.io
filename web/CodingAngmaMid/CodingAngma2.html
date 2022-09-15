@@ -17,6 +17,7 @@
                 console.log(this.name);
             }
         }
+    
 
         let user1 = new User('Mike', 30);
         let user2 = new User('Jane', 22);
@@ -24,6 +25,7 @@
         let user5 = new User('Han', 40);
 
         user5.sayName();
+
 
         function Item(title, price){
             this.title = title;
@@ -38,6 +40,21 @@
         Item1.showPrice();
         Item2.showPrice();
         Item3.showPrice();
+
+        let fruit = prompt('과일')
+        switch(fruit){
+            case Item1.title :
+                alert(`${Item1.price}원 입니다.`);
+                break;
+            case Item2.title :
+                alert(`${Item2.price}원 입니다.`)
+                break;
+            case Item3.title :
+                alert(`${Item3.price}원 입니다.`)
+                break;
+            default :
+                alert('없다');
+        }
     </script>
 
 </body>
