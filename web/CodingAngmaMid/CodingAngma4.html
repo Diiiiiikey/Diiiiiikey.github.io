@@ -47,7 +47,7 @@
         // Symbol.for 매소드는 하나를 생성한 뒤 키를 통해 같은 Symbol을 공유
         const dk1 = Symbol.for('dk');
         const dk2 = Symbol.for('dk');
-        console.log( dk1 == dk2 ); //의 값은 true.
+        console.log( dk1 === dk2 ); //의 값은 true.
 
         // 이름을 얻고 싶다면 
         console.log(Symbol.keyFor(dk1)); // 의 값은 dk. 전역심볼의 이름을 알려줌
@@ -65,7 +65,7 @@
             age : 29,
         };
         // 내가 작업 
-        //sb.showName = function() {}; 이 아닌
+        // sb.showName = function(){}; //이 아닌
         const showName = Symbol("show name");
         sb[showName] = function() {
             console.log(this.name);
