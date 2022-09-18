@@ -14,7 +14,7 @@
 
         let arr2 = ["나는", "철수", "입니다"];
         arr2.splice(1, 0, "여기의", "대가리");
-        console.log(arr2); // 아무것도 안지우고 추가하는 방법4
+        console.log(arr2); // 아무것도 안지우고 추가하는 방법
 
         // result에 넣으면 삭제된 요소 반환
 
@@ -41,13 +41,13 @@
 
         let arrr = ["Mike", "Tom", "Jane"];
         arrr.forEach((name, index) => {
-            console.log(`${index + 1}, ${name}`);
+            console.log(`${index + 1}. ${name}`);
         });
 
         // arr.indexOf / arr.lastIndexOf
 
         let arrrr = [1, 2, 3, 4, 5, 1, 2, 3];
-        arrrr.indexOf(2) //2
+        arrrr.indexOf(2) // 1
         arrrr.indexOf(3, 3); // 7 인수가 2개일 경우 두 번째 인수는 시작 위치
         arrrr.lastIndexOf(3); // 7 끝에서 부터 탐색 시작
 
@@ -109,6 +109,7 @@
         });
 
         console.log(newUserList);
+        console.log(userList);
 
         // arr.join 배열을 합쳐서 문자열 만들기
         
