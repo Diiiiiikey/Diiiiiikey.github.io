@@ -61,7 +61,7 @@ console.log(arr); // [2, 6, 24, 27, 66, 88]
 
 #### arr.reduce(fn)
 
-일수로 함수를 받는다.<br/>
+인수로 함수를 받는다.<br/>
 ((누적 계산값, 현재값) => {return 계산값}, 초기값)<br/>
 초기값이 없으면 배열의 첫번째 요소가 들어간다.
 
@@ -82,7 +82,7 @@ arr.reduce() 를 사용한 배열의 모든 수 합치기
 let arr = [1, 2, 3, 4, 5];
 
 const result = arr.reduce((prev, cur) => {
-    return prev, cur
+    return prev + cur
 }, 0);
 
 console.log(result); // 15

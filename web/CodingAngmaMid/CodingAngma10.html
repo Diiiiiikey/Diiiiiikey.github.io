@@ -50,26 +50,26 @@
             console.log(result);
         }
 
-        /* 위와 같은 동작
-            function add(...numbers) {
-            let result = numbers.reduce((prev, cur) => prev + cur));
-            console.log(result);
-        } **/
+        // //위와 같은 동작
+        //     function add(...numbers) {
+        //     let result = numbers.reduce((prev, cur) => prev + cur);
+        //     console.log(result);
+        // }
 
         add(1, 2, 3);
         add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 
         // 나머지 매개변수는 항상 마지막에
-        function user(name, age, ...skills) {
+        function User(name, age, ...skills) {
             this.name = name;
             this.age = age;
             this.skills = skills;
         }
 
-        const user1 = new user('Mike', 30, 'html','css');
-        const user2 = new user('Tom', 20, 'JS','React');
-        const user3 = new user('Jane', 40, 'Nothing');
+        const user1 = new User('Mike', 30, 'html','css');
+        const user2 = new User('Tom', 20, 'JS','React');
+        const user3 = new User('Jane', 40, 'Nothing');
 
         console.log(user1);
         console.log(user2);
@@ -90,14 +90,38 @@
         console.log(minNum);
         console.log(maxNum);
 
-
         // 전개 구문 : 객체
 
         let userr = {name : 'Mike'}
         let mike = {...userr, age : 30}
         console.log(mike); //{name: 'Mike', age: 30}
-        
 
+
+        let user = {name: "Mike"};
+        let info = {age: 30};
+        let fe = ["JS", "React"];
+        let lang = ["Korean", "English"];
+
+        // user = Object.assign({}, user, info, {
+        //     skills : []
+        //     },
+        // );
+
+        // fe.forEach((item) => {
+        //     user.skills.push(item);
+        // });
+        // lang.forEach((item) => {
+        //     user.skills.push(item);
+        // });
+
+        user = {
+            ...user,
+            ...info,
+            skills: [...fe, ...lang],
+        };
+
+        console.log(user);
+        
 
     </script>
     
