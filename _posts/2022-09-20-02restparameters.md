@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 중급 10"
 categories: JS
-tag: [코딩앙마, 나머지 매개변수, Rest parameter, 전개구문, Spread syntax]
+tag: [코딩앙마, rest parameter, spread syntax]
 toc: true
 sidebar:
     nav: "docs"
@@ -34,7 +34,7 @@ showName(); // undefined
 <li>함수 내에서 이용 가능한 지역변수</li>
 <li>length / index</li>
 <li>Array 형태의 객체(Object)</li>
-<li>배열의 내장 매서드 없음(forEach, map 등)</li>
+<li>배열의 내장 메소드 없음(forEach, map 등)</li>
 </ul>
 
 ```js
@@ -53,7 +53,7 @@ es6 환경에서는 가급적 나머지 매개변수를 사용하는 것을 권�
 
 정해지지 않은 개수의 인수를 배열로 나타낼 수 있게 한다.
 
-배열의 매서드 사용가능
+배열의 메소드 사용가능
 
 ```js
 function showNameB(...names) {

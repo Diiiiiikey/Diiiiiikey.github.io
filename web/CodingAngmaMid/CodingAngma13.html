@@ -23,9 +23,10 @@
         function showThisName() {
             console.log(this.name);
         }
-
-        showThisName.call(mike);
+        
         showThisName();
+        showThisName.call(mike);
+
 
         function update(birthYear, occupation) {
             this.birthYear = birthYear;

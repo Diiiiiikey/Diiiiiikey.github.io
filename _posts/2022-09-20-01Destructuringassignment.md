@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 중급 9"
 categories: JS
-tag: [코딩앙마, 구조분해할당. Destructuring assignment, 배열구조분해]
+tag: [코딩앙마, destructuring assignment, array destructuring]
 toc: true
 sidebar:
     nav: "docs"

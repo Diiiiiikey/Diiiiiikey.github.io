@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 중급 1"
 categories: JS
-tag: [코딩앙마, var, let, const, 변수]
+tag: [코딩앙마, var, let, const, variable]
 toc: true
 sidebar:
     nav: "docs"

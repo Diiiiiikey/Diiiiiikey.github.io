@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 중급 3"
 categories: JS
-tag: [코딩앙마, computed property, property, 객체, object, method]
+tag: [코딩앙마, computed property, property, object, method]
 toc: true
 sidebar:
     nav: "docs"

@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 중급 2"
 categories: JS
-tag: [코딩앙마, constructor, function, 생성자 함수, 함수]
+tag: [코딩앙마, constructor, function, constructor function]
 toc: true
 sidebar:
     nav: "docs"

@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 기초 10"
 categories: JS
-tag: [코딩앙마, 함수표현식, 함수선언문, 화살표함수]
+tag: [코딩앙마, function expressions, function declartion, arrow function]
 toc: true
 sidebar:
     nav: "docs"

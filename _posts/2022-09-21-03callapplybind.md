@@ -32,7 +32,7 @@ showThisName(); // 이때 this는 window를 가리킨다. window.name은 빈문�
 
 showThisName.call(mike); // Mike
 ```
-함수를 호출하면서 call을 사용하고 this로 사용할 객체를 넘기면 해당 함수가 주어진 객체의 매서드인 것처럼 작동한다.
+함수를 호출하면서 call을 사용하고 this로 사용할 객체를 넘기면 해당 함수가 주어진 객체의 메소드인 것처럼 작동한다.
 
 
 ```js
@@ -63,6 +63,7 @@ call의 첫번째 매개변수는 this로 사용할 값(tom)이고 매개변수�
 #### apply
 
 apply 함수 매개변수를 처리하는 방법을 제외하면 call과 완전히 같다.<br/>
+
 call은 일반적인 함수와 마찬가지로 매개변수를 직접 받지만 apply는 매개변수를 배열로 받는다.
 ```js
 const mike = {
@@ -101,6 +102,7 @@ console.log(maxNum); // 40
 ```
 
 apply 사용<br/>
+
 두번째 매개변수로 배열을 전달하면 그 요소들을 차례대로 인수로 사용한다.
 ```js
 const nums = [3, 10, 2, 40, 21]

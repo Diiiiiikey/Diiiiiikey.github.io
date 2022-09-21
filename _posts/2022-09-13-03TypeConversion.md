@@ -2,7 +2,7 @@
 layouts: post
 title:  "JS 코딩앙마 기초 3"
 categories: JS
-tag: [코딩앙마, 형변환]
+tag: [코딩앙마, type conversion]
 toc: true
 sidebar:
     nav: "docs"
