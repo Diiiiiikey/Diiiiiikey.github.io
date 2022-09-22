@@ -114,8 +114,9 @@
 
         // 문자열도 가능
         const str = 'hello'
-        const xx = str[Symbol.iterator]()
+        console.log(str[Symbol.iterator]);// ƒ [Symbol.iterator]() { [native code] }
 
+        const xx = str[Symbol.iterator]()
         console.log(xx.next());
 
 

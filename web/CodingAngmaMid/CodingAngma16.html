@@ -24,7 +24,7 @@
         /* 
         new Promise 생성자가 반환하는 promise 객체는 state와 result를 프로퍼티로 갖는다
 
-        state는 pending(대기) 상태에서 resolve(value)가 호출되면 fulfilled가 된다
+        state는 초기 pending(대기) 상태에서 resolve(value)가 호출되면 fulfilled가 된다
         이때 result는 resolve함수가 전달된 값(value)이다.
 
         reject(error)가 호출된다면 state : rejected / result : error
@@ -201,10 +201,6 @@
             });
             
 
-
-
-
-        
     </script>
     
 </body>
