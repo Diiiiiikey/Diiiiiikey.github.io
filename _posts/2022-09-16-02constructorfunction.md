@@ -67,10 +67,10 @@ switch(fruit){
         alert(`${Item1.price}원 입니다.`);
         break;
     case Item2.title :
-        alert(`${Item2.price}원 입니다.`)
+        alert(`${Item2.price}원 입니다.`);
         break;
     case Item3.title :
-        alert(`${Item3.price}원 입니다.`)
+        alert(`${Item3.price}원 입니다.`);
         break;
     default :
         alert('없다');

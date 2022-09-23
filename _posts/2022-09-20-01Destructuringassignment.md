@@ -10,7 +10,7 @@ sidebar:
 
 ## 구조분해할당(Destructuring assignment)
 
-구조분해할당 구문은 배열이나 객체의 속성을 분해해서 그 값을 변수에 담응ㄹ 수 있게 하는 표현식이다.<br/>
+구조분해할당 구문은 배열이나 객체의 속성을 분해해서 그 값을 변수에 담을 수 있게 하는 표현식이다.<br/>
 
 #### 배열구조분해
 
@@ -20,6 +20,7 @@ let [x, y] = [1, 2];
 console.log(x); // 1
 console.log(y); // 2
 ```
+
 
 ```js
 let users = ["Mike", "Tom", "Jane"];
@@ -41,6 +42,7 @@ console.log(user2); // "Tom"
 console.log(user3); // "Jane"
 ```
 
+<br/>
 
 #### 배열구조분해: 기본값
 
@@ -59,9 +61,11 @@ console.log(b); // 2
 console.log(c); // 3
 ```
 
+<br/>
+
 #### 배열구조분해: 일부 반환값 무시
 
-, ,를 사용해서 공백을 만들어서 일부 반환값을 무시할 수 있다.
+,&nbsp; ,를 사용해서 공백을 만들어서 일부 반환값을 무시할 수 있다.
 ```js
 let [user1, , user2] = ["Mike", "Tom", "Jane", "Tony"];
 
@@ -103,6 +107,7 @@ console.log(name); // "Mike"
 ocnsole.log(age); // 30
 ```
 
+<br/>
 
 #### 객체주고분해: 새로운 변수 이름으로 할당
 
@@ -113,6 +118,7 @@ console.log(userName); // "Mike"
 console.log(userAge); // 30
 ```
 
+<br/>
 
 #### 객체구조분해: 기본값
 

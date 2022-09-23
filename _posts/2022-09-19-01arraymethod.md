@@ -14,7 +14,6 @@ sidebar:
 
 배열 재정렬<br/>
 배열 자체가 변경되니 주의
-
 ```js
 let arr = [1, 5, 4, 3, 6, 2];
 arr.sort();
@@ -35,9 +34,9 @@ arrr.sort();
 
 console.log(arrr); // 14, 21, 36, 55, 74
 ```
-값을 문자열 취급하기 때문에 십의 자리 숫자에 따른 정렬이 된다.
-
+값을 문자열 취급하기 때문에 십의 자리 숫자에 따른 정렬이 된다.<br/>
 따라서 제대로된 정렬을 하기 위해서는 값을 비교해줄 수 있는 함수를 이용해야 한다.
+
 
 작은 숫자부터 정렬하는 방법
 ```js
@@ -65,7 +64,8 @@ console.log(arr); // [2, 6, 24, 27, 66, 88]
 ((누적 계산값, 현재값) => {return 계산값}, 초기값)<br/>
 초기값이 없으면 배열의 첫번째 요소가 들어간다.
 
-arr.forEach() 를 사용한 배열의 모든 수 합치기
+
+arr.forEach()를 사용한 배열의 모든 수 합치기
 ```js
 let arr = [1, 2, 3, 4, 5];
 
@@ -77,7 +77,7 @@ arr.forEach((num) => {
 console.log(result); // 15
 ```
 
-arr.reduce() 를 사용한 배열의 모든 수 합치기
+arr.reduce()를 사용한 배열의 모든 수 합치기
 ```js
 let arr = [1, 2, 3, 4, 5];
 
@@ -88,6 +88,7 @@ const result = arr.reduce((prev, cur) => {
 console.log(result); // 15
 ```
 
+<br/>
 
 ###### 예문 1
 
@@ -112,6 +113,7 @@ const result = userList.reduce((pr, cu) => {
 console.log(result); // ['Mike', 'Dave', 'Tom', 'Adell']
 ```
 
+<br/>
 
 ###### 예문 2
 
@@ -133,6 +135,7 @@ const result = userList.reduce((pr, cu) => {
 console.log(result); // 184
 ```
 
+<br/>
 
 ###### 예문 3
 
@@ -157,6 +160,7 @@ const result = userList.reduce((pr, cu) => {
 console.log(result); // ['Mike', 'John', 'Dave']
 ```
 
+<br/>
 
 #### arr.reduceRight()
 

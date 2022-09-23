@@ -12,7 +12,7 @@ sidebar:
 
 #### arr.splice(n, m, x)
 
-1. 배열의 특정요소를 지움
+1. 배열의 특정요소를 지움,<br/>
 n번째 부터 m개 지워라 x에 추가할 요소
 ```js
 let arr = [1, 2, 3, 4, 5];
@@ -37,19 +37,21 @@ console.log(arr); // 7, 9
 console.log(result); // 1, 3, 5
 ```
 
+<br/>
 
 #### arr.slice(n, m)
 
 n부터 m까지 반환한다.<br/>
 m은 포함하지 않고 반환한다.<br/>
 m이 없으면 끝까지 반환한다.<br/>
-만약 괄호안에 아무것도 없으면 배열을 복사한다.<br/>
+만약 괄호안에 아무것도 없으면 배열을 복사한다.
 ```js
 let arr4 = [2, 4, 6, 8];
 const arr5 = arr4.slice(1, 4);
 console.log(arr5);
 ```
 
+<br/>
 
 #### arr.concat()
 
@@ -62,6 +64,7 @@ arr.concat([3, 4],[5, 6]); // [1, 2, 3, 4, 5, 6]
 arr.concat([3, 4], 5, 6); // [1, 2, 3, 4, 5, 6]
 ```
 
+<br/>
 
 #### arr.forEach(fn)
 
@@ -77,6 +80,7 @@ arrr.forEach((name, index) => {
 }); // 1. Mike / 2. Tom / 3. Jane
 ```
 
+<br/>
 
 #### arr.indexOf() / arr.lastIndexOf()
 
@@ -91,6 +95,7 @@ arrrr.indexOf(3, 3); // 7
 arrrr.lastIndexOf(3); // 7 
 ```
 
+<br/>
 
 #### arr.includes()
 
@@ -102,6 +107,7 @@ arrrr.includes(2); // true
 arrrr.includes(6); // false
 ```
 
+<br/>
 
 #### arr.find(fn) / arr.findIndex(fn)
 
@@ -132,6 +138,8 @@ const result = arr.findindex((good) => {
 console.log(result); // 1
 ```
 
+<br/>
+
 ###### 예문
 
 ```js
@@ -156,6 +164,8 @@ const userListResult = userList.find((user) => {
 });
 ```
 
+<br/>
+
 ###### 예문 2
 
 ```js
@@ -174,6 +184,8 @@ const userListResult = userList.findIndex((user) => {
 
 console.log(userListResult); // 2
 ```
+
+<br/>
 
 #### arr.filter(fn)
 
@@ -195,10 +207,14 @@ const userListResult = userList.filter((user) => {
 console.log(userListResult); // {name: 'Mike', age: 30}, {name: 'Jane', age: 27}
 ```
 
+<br/>
+
 #### arr.reverse()
 
 역순으로 재정렬<br/>
 최근 가입된 유저, 가장 최근 글 순서로 정렬할 때 많이 쓰인다.
+
+<br/>
 
 #### arr.map(fn)
 
@@ -230,6 +246,7 @@ let newUserList = userList.map((user, index) => {
 });
 ```
 
+<br/>
 
 #### arr.join()
 
@@ -244,6 +261,7 @@ let resultHi2 = arrHi.join(" ");
 console.log(resultHi2); // 안녕 반가워
 ```
 
+<br/>
 
 #### arr.split
 
@@ -263,11 +281,12 @@ console.log(lyricsresult);// ['She', 'said', 'What', 'you', 'know', 'about', 'lo
 console.log(lyricsresult2);// ['한', '국', '어', '로', ' ', '한', '다', '면']
 ```
 
+<br/>
 
 #### Array.isArray()
 
 배열인지 확인하는 방법<br/>
-자바스크림트에서 배열은 객체형이기 때문에 typeOf는 객체라고 알려준다.
+자바스크립트에서 배열은 객체형이기 때문에 typeOf는 객체라고 알려준다.
 ```js
 let userList = [
     {name : "Mike", age : 30},

@@ -30,6 +30,7 @@ let decs = "Hi guys"
 decs.toUpperCase(); // "HI GUyS"
 ```
 
+<br/>
 
 #### toLowerCase()
 
@@ -39,6 +40,7 @@ let decs = "Hi guys"
 decs.toLowerCase(); // "hi guys"
 ```
 
+<br/>
 
 #### str.indexOf(text)
 
@@ -51,7 +53,7 @@ desc.indexOf('man') // -1
 ```
 포함된 문자가 여러개라도 첫번째의 위치만 반환하기 때문에 주의해야 한다.
 
-또한 if문을 사용할 대 주의해야 한다.
+또한 if문을 사용할 때 주의해야 한다.
 ```js
 if(desc.indexOf('Hi')// = 0) { 
     console.log('Hi가 포함된 문장입니다.');
@@ -65,6 +67,7 @@ if(desc.indexOf('Hi') > -1) {
 ```
 처럼 사용해야 한다.
 
+<br/>
 
 #### str.slice(n, m)
 
@@ -84,17 +87,20 @@ console.log(descc); // fg
 console.log(descd); // cde
 ```
 
+<br/>
 
 #### str.substring(n, m);
 
-str.slice와 마찬가지로 n과 m사이 문자열 반환
-n과 m을 바꿔도 동작한다.
+str.slice와 마찬가지로 n과 m사이 문자열 반환<br/>
+n과 m을 바꿔도 동작한다.<br/>
 음수는 0으로 인식한다.
 ```js
 let desc = "abcdefg"
 desc.substing(2, 5); // "cde"
 desc.substing(5, 2); // "cde"
 ```
+
+<br/>
 
 #### str.subst(n, m)
 
@@ -104,11 +110,15 @@ let desc = "abcdefg"
 desc.subst(2, 5); // "cdefg"
 ```
 
+<br/>
+
 #### 문자열 비교
 
 "a" < "c" = true<br/>
 아스키코드표 "a".codePointAt(0); 97<br/>
 반대로 String.fromCodePoint(9) "a"
+
+<br/>
 
 #### etc...
 
@@ -116,7 +126,6 @@ desc.subst(2, 5); // "cdefg"
 <li>str.trim() 앞 뒤 공백 제거</li>
 <li>str.repeat(n) n번 반복</li>
 </ul>
-
 
 #### 예문 1
 
@@ -140,11 +149,11 @@ for(let i = 0; i < list.length; i++){
 console.log(newList);
 ```
 
+<br/>
 
 #### 예문 2
 
 금칙어: 시팔
-
 ```js
 function hasSipal(str){
     if(str.indexOf('시팔') > -1){
@@ -155,11 +164,11 @@ function hasSipal(str){
 }
 ```
 
+<br/>
 
 #### str.includes
 
 문자가 문자열에 있으면 true 없다면 false를 반환
-
 ```js
 function hasSipal(str){
     if(str.includes('시팔')){
@@ -168,5 +177,4 @@ function hasSipal(str){
         console.log('통과');
     }
 }
-
 ```

@@ -12,7 +12,6 @@ sidebar:
 
 ```js
 console.log(
-
     String(3), // 3
     String(true), // true
     String(false), // false
@@ -32,12 +31,13 @@ console.log(
     Boolean(null), // false
     Boolean(undefined), // false
     Boolean(NaN) // false
-)
+);
 ```
-<br>
-<br>
 
-주의사항
+<br/>
+
+#### 주의사항
+
 ```js
 console.log(
     Number(null), // 0
@@ -46,5 +46,5 @@ console.log(
     Number('0'), // true
     Number(''), // false
     Number(' '), // true
-            
+);
 ```

@@ -11,7 +11,7 @@ sidebar:
 ## Computed property
 
 ```js
-let a = 'age'
+let a = 'age';
 
 const user = {
     name : 'Mike',
@@ -26,10 +26,9 @@ const user = {
 const user = {
     [1 + 4] : 5,
     ["안녕" + "하세요"] : "Hello"
-}
+};
 console.log(user); // {5 : 5, 안녕하세요 : "Hello"}
 ```
-
 식 자체를 넣는 것도 가능하다.
 
 ```js
@@ -48,8 +47,8 @@ key에 무엇이 들어갈지 모를 때 유용
 ## object method
 
 #### Object.assign()
-객체 복제
 
+객체 복제
 ```js
 const user = {
     name : "Mike",
@@ -96,8 +95,8 @@ newUser4에 info들을 추가하는 방법
 <br/>
 
 #### Object.keys()
-키 배열 반환
 
+키 배열 반환
 ```js
 const user = {
     name : "Mike",
@@ -105,15 +104,15 @@ const user = {
     gender : "male",
 }
 
-const result = Object.keys(user)
+const result = Object.keys(user);
 console.log(result); // ['name', 'age', 'gneder']
 ```
 
 <br/>
 
 #### Object.values()
-값 배열 반환
 
+값 배열 반환
 ```js
 const user = {
     name : "Mike",
@@ -121,15 +120,15 @@ const user = {
     gender : "male",
 }
 
-const result = Object.values(user)
+const result = Object.values(user);
 console.log(result); // ['Mike', 30, 'male']
 ```
 
 <br/>
 
 #### Object.entries()
-키/값 배열 반환
 
+키/값 배열 반환
 ```js
 const user = {
     name : "Mike",
@@ -137,7 +136,7 @@ const user = {
     gender : "male",
 }
 
-const result = Object.entries(user)
+const result = Object.entries(user);
 console.log(result);
 // ['name', 'Mike'], ['age', 30], ['gender', 'male']
 ```
@@ -145,15 +144,15 @@ console.log(result);
 <br/>
 
 #### Object.fromEntries()
-키/값 배열을 객체로
 
+키/값 배열을 객체로
 ```js
 const arr = [
     ["name", "Mike"],
     ["age", 30]
 ];
 
-const result = Object.fromEntries(arr)
+const result = Object.fromEntries(arr);
 console.log(result);
 // {name : "Mike", age : 30}
 ```
