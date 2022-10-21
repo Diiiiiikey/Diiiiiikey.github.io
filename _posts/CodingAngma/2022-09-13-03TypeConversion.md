@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 기초 3"
+title:  "형변환"
 categories: JS
 tag: [코딩앙마, type conversion]
 toc: true

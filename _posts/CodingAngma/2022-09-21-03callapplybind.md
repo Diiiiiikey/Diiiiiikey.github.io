@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 12"
+title:  "call, apply, bind"
 categories: JS
 tag: [코딩앙마, call, apply, bind, method]
 toc: true
@@ -58,6 +58,8 @@ console.log(tom); // {name: 'Tom', birthYear: 2000, occupation: '학생'}
 ```
 call의 첫번째 매개변수는 this로 사용할 값(tom)이고 매개변수가 더 있으면 그 매개변수로 호출하는 함수(1994, '학생')로 전달된다.
 
+---
+
 <br/>
 
 #### apply
@@ -79,8 +81,33 @@ update.apply(mike, [1992, "선생"]);
 console.log(mike); // {name: 'Mike', birthYear: 1992, occupation: '선생'}
 ```
 
+---
 
-###### 예문
+<br/>
+
+#### bind
+
+함수의 this 값을 영구히 바꾼다.
+```js
+const mike = {
+    name : "Mike",
+};
+
+function update(birthYear, occupation) {
+    this.birthYear = birthYear;
+    this.occupation = occupation;
+}
+
+const updateMike = update.bind(mike);
+updateMike(1959, "백수");
+console.log(mike); // {name: 'Mike', birthYear: 1959, occupation: '백수'}
+```
+
+---
+
+<br/>
+
+###### 예문 1
 
 ```js
 const nums = [3, 10, 2, 40, 21]
@@ -123,27 +150,7 @@ console.log(minNum); // 2
 console.log(maxNum); // 40
 ```
 
-<br/>
-
-#### bind
-
-함수의 this 값을 영구히 바꾼다.
-```js
-const mike = {
-    name : "Mike",
-};
-
-function update(birthYear, occupation) {
-    this.birthYear = birthYear;
-    this.occupation = occupation;
-}
-
-const updateMike = update.bind(mike);
-updateMike(1959, "백수");
-console.log(mike); // {name: 'Mike', birthYear: 1959, occupation: '백수'}
-```
-
-###### 예문
+###### 예문 2
 
 ```js
 const user = {

@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 6"
+title:  "문자열과 문자열 메소드"
 categories: JS
 tag: [코딩앙마, string, string method, method]
 toc: true
@@ -20,6 +20,8 @@ sidebar:
 <li>하지만 배열과 다르게 한글자만 바꾸는 것은 허용되지 않는다.</li>
 </ul>
 
+---
+
 ## string method
 
 #### toUpperCase()
@@ -30,6 +32,8 @@ let decs = "Hi guys"
 decs.toUpperCase(); // "HI GUyS"
 ```
 
+---
+
 <br/>
 
 #### toLowerCase()
@@ -39,6 +43,8 @@ decs.toUpperCase(); // "HI GUyS"
 let decs = "Hi guys"
 decs.toLowerCase(); // "hi guys"
 ```
+
+---
 
 <br/>
 
@@ -69,6 +75,8 @@ if(desc.indexOf('Hi') > -1) {
 
 <br/>
 
+---
+
 #### str.slice(n, m)
 
 특정 범위의 문자열만 추출하는 방법<br/>
@@ -89,6 +97,8 @@ console.log(descd); // cde
 
 <br/>
 
+---
+
 #### str.substring(n, m);
 
 str.slice와 마찬가지로 n과 m사이 문자열 반환<br/>
@@ -100,6 +110,8 @@ desc.substing(2, 5); // "cde"
 desc.substing(5, 2); // "cde"
 ```
 
+---
+
 <br/>
 
 #### str.subst(n, m)
@@ -110,6 +122,25 @@ let desc = "abcdefg"
 desc.subst(2, 5); // "cdefg"
 ```
 
+---
+
+<br/>
+
+#### str.includes
+
+문자가 문자열에 있으면 true 없다면 false를 반환
+```js
+function hasSipal(str){
+    if(str.includes('시팔')){
+        console.log('금칙어가 있습니다.');
+    }   else    {
+        console.log('통과');
+    }
+}
+```
+
+---
+
 <br/>
 
 #### 문자열 비교
@@ -118,16 +149,18 @@ desc.subst(2, 5); // "cdefg"
 아스키코드표 "a".codePointAt(0); 97<br/>
 반대로 String.fromCodePoint(9) "a"
 
+---
+
 <br/>
 
-#### etc...
+###### etc...
 
 <ul>
 <li>str.trim() 앞 뒤 공백 제거</li>
 <li>str.repeat(n) n번 반복</li>
 </ul>
 
-#### 예문 1
+###### 예문 1
 
 ```js
 let list = [
@@ -151,27 +184,12 @@ console.log(newList);
 
 <br/>
 
-#### 예문 2
+###### 예문 2
 
 금칙어: 시팔
 ```js
 function hasSipal(str){
     if(str.indexOf('시팔') > -1){
-        console.log('금칙어가 있습니다.');
-    }   else    {
-        console.log('통과');
-    }
-}
-```
-
-<br/>
-
-#### str.includes
-
-문자가 문자열에 있으면 true 없다면 false를 반환
-```js
-function hasSipal(str){
-    if(str.includes('시팔')){
         console.log('금칙어가 있습니다.');
     }   else    {
         console.log('통과');

@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 1"
+title:  "var, let, const"
 categories: JS
 tag: [코딩앙마, var, let, const, variable]
 toc: true

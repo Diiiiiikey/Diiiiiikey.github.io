@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 9"
+title:  "구조분해할당"
 categories: JS
 tag: [코딩앙마, destructuring assignment, array destructuring]
 toc: true
@@ -11,6 +11,8 @@ sidebar:
 ## 구조분해할당(Destructuring assignment)
 
 구조분해할당 구문은 배열이나 객체의 속성을 분해해서 그 값을 변수에 담을 수 있게 하는 표현식이다.<br/>
+
+---
 
 #### 배열구조분해
 
@@ -42,6 +44,8 @@ console.log(user2); // "Tom"
 console.log(user3); // "Jane"
 ```
 
+---
+
 <br/>
 
 #### 배열구조분해: 기본값
@@ -61,6 +65,8 @@ console.log(b); // 2
 console.log(c); // 3
 ```
 
+---
+
 <br/>
 
 #### 배열구조분해: 일부 반환값 무시
@@ -73,6 +79,9 @@ console.log(user1); // "Mike"
 console.log(user2); // "Jane"
 ```
 
+---
+
+<br/>
 
 #### 배열구조분해: 바꿔치기
 
@@ -90,9 +99,11 @@ b = c;
 [a, b] = [b, a];
 ```
 
+---
+
 <br/>
 
-## 객체구조분해
+#### 객체구조분해
 
 ```js
 let user = {name: 'Mike', age: 30};
@@ -107,9 +118,11 @@ console.log(name); // "Mike"
 ocnsole.log(age); // 30
 ```
 
+---
+
 <br/>
 
-#### 객체주고분해: 새로운 변수 이름으로 할당
+#### 객체구조분해: 새로운 변수 이름으로 할당
 
 ```js
 let {name : userName, age : userAge} = user;
@@ -117,6 +130,8 @@ let {name : userName, age : userAge} = user;
 console.log(userName); // "Mike"
 console.log(userAge); // 30
 ```
+
+---
 
 <br/>
 

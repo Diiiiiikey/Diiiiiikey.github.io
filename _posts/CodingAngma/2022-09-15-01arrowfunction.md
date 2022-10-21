@@ -1,14 +1,12 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 기초 10"
+title:  "함수표현"
 categories: JS
 tag: [코딩앙마, function expressions, function declartion, arrow function]
 toc: true
 sidebar:
     nav: "docs"
 ---
-
-## 함수표현식과 함수선언문
 
 #### 함수표현식
 
@@ -47,7 +45,7 @@ function sayHello(){
 
 <br/>
 
-## 화살표함수
+#### 화살표함수
 
 ```js
 let add = function(num1, num2){
@@ -73,6 +71,8 @@ let add = (num1, num2) => num1 + num2;
 ```
 
 <br/>
+
+---
 
 ```js
 let sayHello = function(name){

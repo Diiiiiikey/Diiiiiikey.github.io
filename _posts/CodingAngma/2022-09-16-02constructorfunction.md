@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 2"
+title:  "생성자 함수"
 categories: JS
 tag: [코딩앙마, constructor, function, constructor function]
 toc: true
@@ -59,7 +59,10 @@ Item3.showPrice(); // 가격은 1000원 입니다.
 
 <br/>
 
-막간 switch문 연습
+---
+
+##### 막간 switch문 연습
+
 ```js
 let fruit = prompt('과일')
 switch(fruit){

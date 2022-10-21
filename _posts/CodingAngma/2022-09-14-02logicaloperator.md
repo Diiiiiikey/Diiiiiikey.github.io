@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 기초 5"
+title:  "논리연산자"
 categories: JS
 tag: [코딩앙마, logical operator]
 toc: true

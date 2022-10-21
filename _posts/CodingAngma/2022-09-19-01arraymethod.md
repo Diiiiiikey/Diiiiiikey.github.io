@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 8"
+title:  "배열 메소드 3"
 categories: JS
 tag: [코딩앙마, array, array method, method]
 toc: true
@@ -57,6 +57,9 @@ console.log(arr); // [2, 6, 24, 27, 66, 88]
 위와 같은 함수를 사용하기 보단 유용한 기능을 모아놓은 [Lodash](https://lodash.com)같은 라이브러리를 사용한다.<br/>
 실무에서 많이 사용됨
 
+---
+
+<br/>
 
 #### arr.reduce(fn)
 
@@ -87,6 +90,14 @@ const result = arr.reduce((prev, cur) => {
 
 console.log(result); // 15
 ```
+
+---
+
+#### arr.reduceRight()
+
+reduce와 기능이 동일하지만 배열의 끝부터 연산을 수행한다.
+
+---
 
 <br/>
 
@@ -159,9 +170,3 @@ const result = userList.reduce((pr, cu) => {
 
 console.log(result); // ['Mike', 'John', 'Dave']
 ```
-
-<br/>
-
-#### arr.reduceRight()
-
-reduce와 기능이 동일하지만 배열의 끝부터 연산을 수행한다.

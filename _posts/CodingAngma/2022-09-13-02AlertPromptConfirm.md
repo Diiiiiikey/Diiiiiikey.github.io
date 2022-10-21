@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 기초 2"
+title:  "alert, prompt, confirm"
 categories: JS
 tag: [코딩앙마, alert, prompt, confirm]
 toc: true

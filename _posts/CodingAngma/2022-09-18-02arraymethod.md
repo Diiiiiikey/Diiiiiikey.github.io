@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "JS 코딩앙마 중급 7"
+title:  "배열 메소드"
 categories: JS
 tag: [코딩앙마, array, array method, method]
 toc: true
@@ -37,6 +37,8 @@ console.log(arr); // 7, 9
 console.log(result); // 1, 3, 5
 ```
 
+---
+
 <br/>
 
 #### arr.slice(n, m)
@@ -51,6 +53,8 @@ const arr5 = arr4.slice(1, 4);
 console.log(arr5);
 ```
 
+---
+
 <br/>
 
 #### arr.concat()
@@ -63,6 +67,8 @@ arr.concat([3, 4]); [1, 2, 3, 4]
 arr.concat([3, 4],[5, 6]); // [1, 2, 3, 4, 5, 6]
 arr.concat([3, 4], 5, 6); // [1, 2, 3, 4, 5, 6]
 ```
+
+---
 
 <br/>
 
@@ -80,6 +86,8 @@ arrr.forEach((name, index) => {
 }); // 1. Mike / 2. Tom / 3. Jane
 ```
 
+---
+
 <br/>
 
 #### arr.indexOf() / arr.lastIndexOf()
@@ -95,6 +103,8 @@ arrrr.indexOf(3, 3); // 7
 arrrr.lastIndexOf(3); // 7 
 ```
 
+---
+
 <br/>
 
 #### arr.includes()
@@ -106,6 +116,8 @@ let arrrr = [1, 2, 3, 4, 5, 1, 2, 3];
 arrrr.includes(2); // true
 arrrr.includes(6); // false
 ```
+
+---
 
 <br/>
 
@@ -137,6 +149,8 @@ const result = arr.findindex((good) => {
 
 console.log(result); // 1
 ```
+
+---
 
 <br/>
 
@@ -183,120 +197,4 @@ const userListResult = userList.findIndex((user) => {
 });
 
 console.log(userListResult); // 2
-```
-
-<br/>
-
-#### arr.filter(fn)
-
-조건에 만족하는 모든 요소를 반환한다.
-```js
-let userList = [
-    {name : "Mike", age : 30},
-    {name : "Jane", age : 27},
-    {name : "Tom", age : 10},
-];
-
-const userListResult = userList.filter((user) => {
-    if(user.age > 19){
-        return true;
-    }
-    return false;
-});
-
-console.log(userListResult); // {name: 'Mike', age: 30}, {name: 'Jane', age: 27}
-```
-
-<br/>
-
-#### arr.reverse()
-
-역순으로 재정렬<br/>
-최근 가입된 유저, 가장 최근 글 순서로 정렬할 때 많이 쓰인다.
-
-<br/>
-
-#### arr.map(fn)
-
-한수를 받아 특정 기능을 시행하고 새로운 배열을 반환한다.
-
-
-매번 나이를 확인하는 것이 귀찮기 때문에 isAdult 라는 프로퍼티를 추가한 새로운 배열을 만든다.
-```js
-let userList = [
-    {name : "Mike", age : 30},
-    {name : "Jane", age : 27},
-    {name : "Tom", age : 10},
-];
-
-let newUserList = userList.map((user, index) => {
-    return Object.assign({}, user, {
-        isAdult : user.age > 19
-    });
-});
-
-console.log(newUserList); // [{name: 'Mike', age: 30, isAdult: true}, {name: 'Jane', age: 27, isAdult: true}, {name: 'Tom', age: 10, isAdult: false}
-
-// index까지 사용한다면
-let newUserList = userList.map((user, index) => {
-    return Object.assign({}, user, {
-        id : index + 1,
-        isAdult : user.age > 19,
-    });
-});
-```
-
-<br/>
-
-#### arr.join()
-
-배열을 합쳐서 문자열을 만든다.<br/>
-인수로 구분자를 받는다.
-```js
-let arrHi = ["안녕", "반가워"];
-let resultHi = arrHi.join();
-console.log(resultHi); // 안녕,반가워
-
-let resultHi2 = arrHi.join(" ");
-console.log(resultHi2); // 안녕 반가워
-```
-
-<br/>
-
-#### arr.split
-
-문자열을 나눠서 배열로 만든다.
-```js
-const users = "Mike, Jane, Tom, Tony";
-const usersresult = users.split(",");
-
-const lyrics = "She said What you know about love";
-const lyricsresult = lyrics.split(" ")
-
-const lyrics2 = "한국어로 한다면";
-const lyricsresult2 = lyrics2.split("")
-
-console.log(usersresult);// ['Mike', ' Jane', ' Tom', ' Tony']
-console.log(lyricsresult);// ['She', 'said', 'What', 'you', 'know', 'about', 'love']
-console.log(lyricsresult2);// ['한', '국', '어', '로', ' ', '한', '다', '면']
-```
-
-<br/>
-
-#### Array.isArray()
-
-배열인지 확인하는 방법<br/>
-자바스크립트에서 배열은 객체형이기 때문에 typeOf는 객체라고 알려준다.
-```js
-let userList = [
-    {name : "Mike", age : 30},
-    {name : "Jane", age : 27},
-    {name : "Tom", age : 10},
-];
-
-let to = typeof(userList);
-console.log(to); // object
-
-let too = Array.isArray(userList)
-console.log(too); // true
 ```
