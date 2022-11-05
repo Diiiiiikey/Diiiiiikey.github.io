@@ -114,7 +114,7 @@ desc.substing(5, 2); // "cde"
 
 <br/>
 
-#### str.subst(n, m)
+#### str.substr(n, m)
 
 n부터 시작 m개를 가져옴
 ```js
