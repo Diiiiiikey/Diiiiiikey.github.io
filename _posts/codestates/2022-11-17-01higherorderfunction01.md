@@ -89,3 +89,12 @@ JS에서 함수는
 filter, map, reduce, forEach, find, sort, some, every 등
 
 아무래도 문제를 많이 풀어봐야 알 것 같다.
+
+
+---
+
+
+막혔던 coplit
+
+6번
+
