@@ -96,5 +96,5 @@ filter, map, reduce, forEach, find, sort, some, every 등
 
 막혔던 coplit
 
-6번
+6번, 14번, 31번, 
 
