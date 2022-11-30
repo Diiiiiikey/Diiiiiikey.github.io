@@ -106,8 +106,8 @@ n과 m을 바꿔도 동작한다.<br/>
 음수는 0으로 인식한다.
 ```js
 let desc = "abcdefg"
-desc.substing(2, 5); // "cde"
-desc.substing(5, 2); // "cde"
+desc.substring(2, 5); // "cde"
+desc.substring(5, 2); // "cde"
 ```
 
 ---
