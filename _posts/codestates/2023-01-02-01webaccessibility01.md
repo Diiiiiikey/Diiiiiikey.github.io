@@ -85,9 +85,9 @@ sidebar:
         - caption 요소를 사용해서 표에 제목을 제공, 혹은 요약
         - 테이블 요소 안에 caption 요소를 사용해서 표에 제목을 제공
         - 제목 셀은 `<th>`, 데이터 셀은 `<td>`, 열생성 `<tr>`
-        - scope 혹은 id와 headers 속성 사용
+        - scope(1대1로 매치가 가능할 때) 혹은 id와 headers 속성 사용(셀을 합치거나 나누는 경우가 있을 때)
     - 레이블 제공
-        - label 요소의 for 속성으로 연결
+        - label 요소의 for 속성으로 연결(리엑트에서는 htmlFor, className을 사용하는 것과 같은 논리)
         - title 속성을 사용
     - 오류 정정
 4. 견고성
