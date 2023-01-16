@@ -1,6 +1,6 @@
 ---
 layouts: post
-title:  "Stack, Queue, Tree, Graph"
+title:  "Stack, Queue"
 categories: JS
 tag: [codestates]
 toc: true
