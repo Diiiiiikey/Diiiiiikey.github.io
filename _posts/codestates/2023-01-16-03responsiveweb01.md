@@ -1,7 +1,7 @@
 ---
 layouts: post
 title:  "resposive wep"
-categories: HTML
+categories: HTML, CSS
 tag: [codestates]
 toc: true
 sidebar:
