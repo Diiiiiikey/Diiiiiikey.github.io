@@ -1,7 +1,7 @@
 ---
 layouts: post
 title: "[Project Management] 아이디어 미믹"
-categories: JS
+categories: Main-Project
 tag: [codestates]
 toc: true
 sidebar:

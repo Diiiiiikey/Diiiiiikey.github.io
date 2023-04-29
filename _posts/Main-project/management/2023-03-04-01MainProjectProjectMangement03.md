@@ -1,7 +1,7 @@
 ---
 layouts: post
 title: "[Project Management] 개발환경 구성"
-categories: JS
+categories: Main-Project
 tag: [codestates]
 toc: true
 sidebar:

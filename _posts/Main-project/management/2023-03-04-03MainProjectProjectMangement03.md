@@ -1,7 +1,7 @@
 ---
 layouts: post
 title: "[Project Management] Git"
-categories: JS
+categories: Main-Project
 tag: [codestates]
 toc: true
 sidebar:

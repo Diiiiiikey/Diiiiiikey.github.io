@@ -1,7 +1,7 @@
 ---
 layouts: post
 title: "[Project Management] 프로젝트 기획"
-categories: JS
+categories: Main-Project
 tag: [codestates]
 toc: true
 sidebar:
