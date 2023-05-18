@@ -1,6 +1,6 @@
 ---
 layouts: post
-title: "[Project Refactoring]타이포그라피"
+title: "[Project Refactoring]Typography"
 categories: Main-Project
 tag: [codestates]
 toc: true
