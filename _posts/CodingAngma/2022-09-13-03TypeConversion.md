@@ -1,36 +1,36 @@
 ---
 layouts: post
-title:  "형변환"
+title: "형변환"
 categories: JS
 tag: [코딩앙마, type conversion]
 toc: true
 sidebar:
-    nav: "docs"
+  nav: "docs"
 ---
 
 ## 형변환
 
 ```js
 console.log(
-    String(3), // 3
-    String(true), // true
-    String(false), // false
-    String(null), // null
-    String(undefined), // undefined
-        
-    Number("1234"), // 1234
-    Number("fufuf"), // NaN
-    Number(true), // 1
-    Number(false), // 0
+  String(3), // 3
+  String(true), // true
+  String(false), // false
+  String(null), // null
+  String(undefined), // undefined
 
-    Boolean(1), // true
-    Boolean(1234), // true
-    Boolean("good"), // true
-    Boolean(0), // false
-    Boolean(""), // false
-    Boolean(null), // false
-    Boolean(undefined), // false
-    Boolean(NaN) // false
+  Number("1234"), // 1234
+  Number("fufuf"), // NaN
+  Number(true), // 1
+  Number(false), // 0
+
+  Boolean(1), // true
+  Boolean(1234), // true
+  Boolean("good"), // true
+  Boolean(0), // false
+  Boolean(""), // false
+  Boolean(null), // false
+  Boolean(undefined), // false
+  Boolean(NaN) // false
 );
 ```
 
@@ -40,11 +40,11 @@ console.log(
 
 ```js
 console.log(
-    Number(null), // 0
-    Number(undefined), // NaN
-    Number(0), // false
-    Number('0'), // true
-    Number(''), // false
-    Number(' '), // true
+  Number(null), // 0
+  Number(undefined), // NaN
+  Number(0), // false
+  Number("0"), // true
+  Number(""), // false
+  Number(" ") // true
 );
 ```
