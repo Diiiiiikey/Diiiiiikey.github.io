@@ -86,19 +86,25 @@ Virtual DOM 내부의 프로퍼티만 수정, 모든 노드에 걸친 업데이�
 되면 className만 수정
 
 className = before
+{% raw %}
 
+```js
+ <div style={{color: 'red', fontWeight: 'bold"}} title="stuff" />
 ```
-<div style={{color: 'red', fontWeight: 'bold"}} title="stuff" />
-```
+
+{% endraw %}
 
 가
 
 <br/>
 className = after
+{% raw %}
 
-```
+```js
 <div style={{color: 'red', fontWeight: 'bold"}} title="stuff" />
 ```
+
+{% endraw %}
 
 되면 React는 color만 수정, 하나의 DOM 노드를 처리한 뒤 React는 뒤이어서 해당 노드들의 자식들을 순차적으로 동시에 순회하면서 차이가 발견될 때마다 변경. 이를 재귀적으로 처리한다고 표현
 
