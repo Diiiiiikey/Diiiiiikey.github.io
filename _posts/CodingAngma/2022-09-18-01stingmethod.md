@@ -1,11 +1,11 @@
 ---
 layouts: post
-title:  "문자열과 문자열 메소드"
+title: "문자열과 문자열 메소드"
 categories: JS
 tag: [코딩앙마, string, string method, method]
 toc: true
 sidebar:
-    nav: "docs"
+  nav: "docs"
 ---
 
 ## string
@@ -27,8 +27,9 @@ sidebar:
 #### toUpperCase()
 
 대문자로 바꾸기
+
 ```js
-let decs = "Hi guys"
+let decs = "Hi guys";
 decs.toUpperCase(); // "HI GUyS"
 ```
 
@@ -39,8 +40,9 @@ decs.toUpperCase(); // "HI GUyS"
 #### toLowerCase()
 
 소문자로 바꾸기
+
 ```js
-let decs = "Hi guys"
+let decs = "Hi guys";
 decs.toLowerCase(); // "hi guys"
 ```
 
@@ -51,26 +53,32 @@ decs.toLowerCase(); // "hi guys"
 #### str.indexOf(text)
 
 문자를 인수로 받아 몇번째에 위치하는지 알려준다.
+
 ```js
 let desc = "Hi guys. Nice to meet you.";
 
-desc.indexOf('to'); // 14
-desc.indexOf('man') // -1
+desc.indexOf("to"); // 14
+desc.indexOf("man"); // -1
 ```
+
 포함된 문자가 여러개라도 첫번째의 위치만 반환하기 때문에 주의해야 한다.
 
 또한 if문을 사용할 때 주의해야 한다.
+
 ```js
-if(desc.indexOf('Hi')// = 0) { 
+if(desc.indexOf('Hi')// = 0) {
     console.log('Hi가 포함된 문장입니다.');
 }
 ```
+
 찾으려는 문장이 맨 문자열 맨 앞에 있을 때의 index는 0이고 if문의 조건문에서 0은 false이기 때문에 출력되지 않는다 따라서
+
 ```js
-if(desc.indexOf('Hi') > -1) { 
-    console.log('Hi가 포함된 문장입니다.');
+if (desc.indexOf("Hi") > -1) {
+  console.log("Hi가 포함된 문장입니다.");
 }
 ```
+
 처럼 사용해야 한다.
 
 <br/>
@@ -84,6 +92,7 @@ n부터 m까지의 문자열 추출<br/>
 m이 없다면 문자열 끝까지<br/>
 m이 있다면 포함은 안시킴<br/>
 음수를 적으면 끝에서 부터 셈
+
 ```js
 let desca = "abcdefg";
 let descb = desca.slice(2, 5);
@@ -104,8 +113,9 @@ console.log(descd); // cde
 str.slice와 마찬가지로 n과 m사이 문자열 반환<br/>
 n과 m을 바꿔도 동작한다.<br/>
 음수는 0으로 인식한다.
+
 ```js
-let desc = "abcdefg"
+let desc = "abcdefg";
 desc.substring(2, 5); // "cde"
 desc.substring(5, 2); // "cde"
 ```
@@ -117,8 +127,9 @@ desc.substring(5, 2); // "cde"
 #### str.substr(n, m)
 
 n부터 시작 m개를 가져옴
+
 ```js
-let desc = "abcdefg"
+let desc = "abcdefg";
 desc.subst(2, 5); // "cdefg"
 ```
 
@@ -129,13 +140,14 @@ desc.subst(2, 5); // "cdefg"
 #### str.includes
 
 문자가 문자열에 있으면 true 없다면 false를 반환
+
 ```js
-function hasSipal(str){
-    if(str.includes('시팔')){
-        console.log('금칙어가 있습니다.');
-    }   else    {
-        console.log('통과');
-    }
+function hasSipal(str) {
+  if (str.includes("시팔")) {
+    console.log("금칙어가 있습니다.");
+  } else {
+    console.log("통과");
+  }
 }
 ```
 
@@ -153,30 +165,28 @@ function hasSipal(str){
 
 <br/>
 
-###### etc...
+##### etc...
 
 <ul>
 <li>str.trim() 앞 뒤 공백 제거</li>
 <li>str.repeat(n) n번 반복</li>
 </ul>
 
-###### 예문 1
+##### 예문 1
 
 ```js
 let list = [
-"01. 들어가며",
-"02. JS의 역사",
-"03. 쟈료형",
-"04. 함수",
-"05. 배열",
+  "01. 들어가며",
+  "02. JS의 역사",
+  "03. 쟈료형",
+  "04. 함수",
+  "05. 배열",
 ];
 
 let newList = [];
 
-for(let i = 0; i < list.length; i++){
-    newList.push(
-        list[i].slice(4)
-    );
+for (let i = 0; i < list.length; i++) {
+  newList.push(list[i].slice(4));
 }
 
 console.log(newList);
@@ -184,15 +194,16 @@ console.log(newList);
 
 <br/>
 
-###### 예문 2
+##### 예문 2
 
 금칙어: 시팔
+
 ```js
-function hasSipal(str){
-    if(str.indexOf('시팔') > -1){
-        console.log('금칙어가 있습니다.');
-    }   else    {
-        console.log('통과');
-    }
+function hasSipal(str) {
+  if (str.indexOf("시팔") > -1) {
+    console.log("금칙어가 있습니다.");
+  } else {
+    console.log("통과");
+  }
 }
 ```

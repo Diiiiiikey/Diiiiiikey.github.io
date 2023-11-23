@@ -88,9 +88,10 @@ By default the theme uses [system fonts](https://medium.com/designing-medium/sys
 
 ```scss
 /* system typefaces */
-$serif      : Georgia, Times, serif;
-$sans-serif : -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$monospace  : Monaco, Consolas, "Lucida Console", monospace;
+$serif: Georgia, Times, serif;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+  "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$monospace: Monaco, Consolas, "Lucida Console", monospace;
 ```
 
 Sans-serif fonts have been used for most of the type, with serifs reserved for captions. If you wish to change this you'll need to poke around the various `SCSS` partials and modify `font-family` declarations.
@@ -105,17 +106,22 @@ Not a fan of the refreshed typography of the theme and want to revert back an ol
 **1.** Add this Google Fonts script to [`_includes/head/custom.html`](https://github.com/mmistakes/minimal-mistakes/blob/master/_includes/head/custom.html):
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+<link
+  href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
 **2.** Update the following SCSS variables:
 
 ```scss
-$serif              : "PT Serif", Georgia, Times, serif;
-$sans-serif-narrow  : "PT Sans Narrow", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$serif: "PT Serif", Georgia, Times, serif;
+$sans-serif-narrow: "PT Sans Narrow", -apple-system, BlinkMacSystemFont, "Roboto",
+  "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 
-$global-font-family : $serif;
-$header-font-family : $sans-serif-narrow;
+$global-font-family: $serif;
+$header-font-family: $sans-serif-narrow;
 ```
 
 ### Type scale
@@ -135,14 +141,14 @@ Type sizes are set in ems to proportional scale as the screen size changes. Larg
 
 ```scss
 /* type scale */
-$type-size-1 : 2.441em;  // ~39.056px
-$type-size-2 : 1.953em;  // ~31.248px
-$type-size-3 : 1.563em;  // ~25.008px
-$type-size-4 : 1.25em;   // ~20px
-$type-size-5 : 1em;      // ~16px
-$type-size-6 : 0.75em;   // ~12px
-$type-size-7 : 0.6875em; // ~11px
-$type-size-8 : 0.625em;  // ~10px
+$type-size-1: 2.441em; // ~39.056px
+$type-size-2: 1.953em; // ~31.248px
+$type-size-3: 1.563em; // ~25.008px
+$type-size-4: 1.25em; // ~20px
+$type-size-5: 1em; // ~16px
+$type-size-6: 0.75em; // ~12px
+$type-size-7: 0.6875em; // ~11px
+$type-size-8: 0.625em; // ~10px
 ```
 
 ### Colors
@@ -155,7 +161,7 @@ To make customizing the colors used in code highlighted blocks, a base of sixtee
 
 Code block colors can easily be changed by overriding any of the following color variables:
 
-##### Default
+#### Default
 
 ![default-code-block]({{ '/assets/images/default-code-block.jpg' | relative_url }})
 
@@ -179,7 +185,7 @@ $base0e: #c792ea;
 $base0f: #ff5370;
 ```
 
-##### Solarized light
+#### Solarized light
 
 ![solarized-light-code-block]({{ '/assets/images/solarized-light-code-block.jpg' | relative_url }})
 
@@ -203,7 +209,7 @@ $base0e: #6c71c4 !default;
 $base0f: #d33682 !default;
 ```
 
-##### Contrast
+#### Contrast
 
 ![contrast-code-block]({{ '/assets/images/contrast-code-block.jpg' | relative_url }})
 
@@ -227,7 +233,7 @@ $base0e: #ff73fd;
 $base0f: #b18a3d;
 ```
 
-##### Dark
+#### Dark
 
 ![dark-code-block]({{ '/assets/images/dark-code-block.jpg' | relative_url }})
 
@@ -251,7 +257,7 @@ $base0e: #ad00a1;
 $base0f: #cc6633;
 ```
 
-##### Dirt
+#### Dirt
 
 ![dirt-code-block]({{ '/assets/images/dirt-code-block.jpg' | relative_url }})
 
@@ -275,7 +281,7 @@ $base0e: #bb90e2;
 $base0f: #b49368;
 ```
 
-##### Dracula
+#### Dracula
 
 ![dracula-code-block]({{ '/assets/images/dracula-code-block.jpg' | relative_url }})
 
@@ -300,7 +306,7 @@ $base0e: #b45bcf;
 $base0f: #00f769;
 ```
 
-##### Neon
+#### Neon
 
 ![neon-code-block]({{ '/assets/images/neon-code-block.jpg' | relative_url }})
 
@@ -324,7 +330,7 @@ $base0e: #ad00a1;
 $base0f: #cc6633;
 ```
 
-##### Plum
+#### Plum
 
 ![plum-code-block]({{ '/assets/images/plum-code-block.jpg' | relative_url }})
 
@@ -348,7 +354,7 @@ $base0e: #ad00a1;
 $base0f: #cc6633;
 ```
 
-##### Sunrise
+#### Sunrise
 
 ![sunrise-code-block]({{ '/assets/images/sunrise-code-block.jpg' | relative_url }})
 
@@ -388,6 +394,6 @@ And `$susy` is used for setting [the grid](http://susy.oddbird.net/) the theme u
 You can disable either the fade-in intro animation, element transition animations, or both by overriding the corresponding variables. For example if you wanted to disable all animations you could include the following lines:
 
 ```scss
-$intro-transition  : none;
-$global-transition : none;
+$intro-transition: none;
+$global-transition: none;
 ```

@@ -109,7 +109,7 @@ JS 객체는 자신의 프로토타입(prototype)에 대해 암묵적인 참조�
 
 ---
 
-##### 렉시컬 스코핑(lexical scoping)
+#### 렉시컬 스코핑(lexical scoping)
 
 ---
 

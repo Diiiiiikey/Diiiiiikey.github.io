@@ -1,11 +1,11 @@
 ---
 layouts: post
-title:  "생성자 함수"
+title: "생성자 함수"
 categories: JS
 tag: [코딩앙마, constructor, function, constructor function]
 toc: true
 sidebar:
-    nav: "docs"
+  nav: "docs"
 ---
 
 ## 생성자 함수
@@ -19,21 +19,22 @@ sidebar:
 #### 예문
 
 ```js
-function User(name, age){
-    this.name = name;
-    this.age = age
-    this.sayName = function(){
-        console.log(this.name);
-    }
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+  this.sayName = function () {
+    console.log(this.name);
+  };
 }
 
-let user1 = new User('Mike', 30);
-let user2 = new User('Jane', 22);
-let user3 = new User('Tom', 17);
-let user5 = new User('Han', 40);
+let user1 = new User("Mike", 30);
+let user2 = new User("Jane", 22);
+let user3 = new User("Tom", 17);
+let user5 = new User("Han", 40);
 
 user5.sayName(); // Han
 ```
+
 객체 프로퍼티처럼 단축 프로퍼티와 function을 생략해봤지만 불가.
 
 <br/>
@@ -61,21 +62,21 @@ Item3.showPrice(); // 가격은 1000원 입니다.
 
 ---
 
-##### 막간 switch문 연습
+#### 막간 switch문 연습
 
 ```js
-let fruit = prompt('과일')
-switch(fruit){
-    case Item1.title :
-        alert(`${Item1.price}원 입니다.`);
-        break;
-    case Item2.title :
-        alert(`${Item2.price}원 입니다.`);
-        break;
-    case Item3.title :
-        alert(`${Item3.price}원 입니다.`);
-        break;
-    default :
-        alert('없다');
+let fruit = prompt("과일");
+switch (fruit) {
+  case Item1.title:
+    alert(`${Item1.price}원 입니다.`);
+    break;
+  case Item2.title:
+    alert(`${Item2.price}원 입니다.`);
+    break;
+  case Item3.title:
+    alert(`${Item3.price}원 입니다.`);
+    break;
+  default:
+    alert("없다");
 }
 ```
